@@ -28,9 +28,6 @@ export const PROVINCE_POPULATIONS: Record<number, string> = {
   7: '2,694,783',
 }
 
-// Election: House of Representatives, 5 March 2026, Nepal time
-export const ELECTION_TIME = new Date('2026-03-05T00:00:00+05:45').getTime()
-
 // Party colors for election results overlay (past election winners)
 export const PARTY_COLORS: Record<string, string> = {
   uml: '#e11d48',

@@ -1,12 +1,10 @@
 import { useEffect, useRef, useCallback } from 'react'
 import L from 'leaflet'
-import type { GeoJsonData, SidebarProps, ElectionResultsMap } from '../types'
+import type { GeoJsonData } from '../types'
 import {
   PROVINCE_NAMES,
   PROVINCE_FILL_COLORS,
   PROVINCE_POPULATIONS,
-  PARTY_COLORS,
-  PARTY_LABELS,
 } from '../constants'
 import { MAP_PINS } from '../data/mapPins'
 
@@ -26,29 +24,13 @@ const selectedStyle = {
   fillOpacity: 0.95,
 }
 
-export type MapOverlayMode = 'default' | 'election' | 'turnout'
-
-function turnoutToColor(percent: number): string {
-  const min = 50
-  const max = 90
-  const t = Math.max(min, Math.min(max, percent))
-  const ratio = (t - min) / (max - min)
-  const r = Math.round(34 + (22 - 34) * ratio)
-  const g = Math.round(197 + (163 - 197) * ratio)
-  const b = Math.round(94 + (48 - 94) * ratio)
-  return `rgb(${r},${g},${b})`
-}
-
 interface NepalMapProps {
   fullData: GeoJsonData | null
   mode: 'country' | 'province'
   currentProvinceCode: number | null
-  selectedConstituencyCode: string | null
-  mapOverlayMode: MapOverlayMode
-  electionResults: ElectionResultsMap
-  partyFilter: string
+  selectedSchool: string | null
   onZoomToProvince: (provinceCode: number) => void
-  onSelectConstituency: (props: SidebarProps) => void
+  onSelectSchool: (label: string) => void
   onResetView: () => void
 }
 
@@ -56,12 +38,9 @@ export function NepalMap({
   fullData,
   mode,
   currentProvinceCode,
-  selectedConstituencyCode,
-  mapOverlayMode,
-  electionResults,
-  partyFilter,
+  selectedSchool,
   onZoomToProvince,
-  onSelectConstituency,
+  onSelectSchool,
   onResetView,
 }: NepalMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -70,7 +49,6 @@ export function NepalMap({
   const provinceLayerRef = useRef<L.GeoJSON | null>(null)
   const selectedLayerRef = useRef<L.Path | null>(null)
   const pinsLayerRef = useRef<L.LayerGroup | null>(null)
-  const fullBoundsRef = useRef<L.LatLngBounds | null>(null)
 
   const clearSelection = useCallback(() => {
     if (selectedLayerRef.current) {
@@ -109,7 +87,6 @@ export function NepalMap({
     ): L.PathOptions {
       const props = feature?.properties as Record<string, unknown> | undefined
       const provinceCode = props?.FIRST_STAT as number | undefined
-      const horCode = props?.HOR_CODE as string | undefined
       if (viewMode === 'country') {
         const fill = provinceCode != null ? PROVINCE_FILL_COLORS[provinceCode] ?? '#e5e7eb' : '#e5e7eb'
         return {
@@ -118,22 +95,6 @@ export function NepalMap({
           weight: 0,
           fillColor: fill,
           fillOpacity: 0.9,
-        }
-      }
-      if (viewMode === 'province' && horCode && (mapOverlayMode === 'election' || mapOverlayMode === 'turnout')) {
-        const result = electionResults[horCode]
-        const base = { ...defaultStyle, weight: 1.2, color: '#475569' }
-        if (mapOverlayMode === 'election' && result?.partyId) {
-          const fill = PARTY_COLORS[result.partyId] ?? PARTY_COLORS.other
-          const matchesParty = !partyFilter || result.partyId === partyFilter
-          return {
-            ...base,
-            fillColor: matchesParty ? fill : '#cbd5e1',
-            fillOpacity: matchesParty ? 0.85 : 0.35,
-          }
-        }
-        if (mapOverlayMode === 'turnout' && result?.turnoutPercent != null) {
-          return { ...base, fillColor: turnoutToColor(result.turnoutPercent), fillOpacity: 0.9 }
         }
       }
       return defaultStyle
@@ -192,7 +153,6 @@ export function NepalMap({
 
       layer.on('click', function (this: L.Layer) {
         const pCode = props.FIRST_STAT as number | undefined
-        const hCode = props.HOR_CODE as string | undefined
         if (viewMode === 'country' && pCode != null) {
           onZoomToProvince(pCode)
           return
@@ -202,11 +162,6 @@ export function NepalMap({
         }
         selectedLayerRef.current = this as L.Path
         ;(this as L.Path).setStyle(selectedStyle)
-        onSelectConstituency({
-          DISTRICT: String(district ?? ''),
-          FIRST_STAT: pCode ?? 0,
-          HOR_CODE: hCode ?? '',
-        })
       })
     }
 
@@ -240,7 +195,6 @@ export function NepalMap({
       layer.addTo(map)
       nepalLayerRef.current = layer
       const bounds = layer.getBounds()
-      fullBoundsRef.current = bounds
       map.fitBounds(bounds)
       map.setMaxBounds(bounds.pad(0.05))
     } else if (currentProvinceCode != null) {
@@ -265,42 +219,20 @@ export function NepalMap({
     MAP_PINS.forEach((pin) => {
       const marker = L.marker([pin.lat, pin.lng], { icon: pinIcon })
       marker.bindPopup(pin.label)
+      marker.on('click', () => onSelectSchool(pin.label))
       pinsGroup.addLayer(marker)
     })
     pinsGroup.addTo(map)
     pinsLayerRef.current = pinsGroup
-  }, [fullData, mode, currentProvinceCode, mapOverlayMode, electionResults, partyFilter, onZoomToProvince, onSelectConstituency, clearSelection])
+  }, [fullData, mode, currentProvinceCode, onZoomToProvince, onSelectSchool, clearSelection])
 
-  // When selectedConstituencyCode changes (from dropdown or candidates box), highlight and zoom to that layer
   useEffect(() => {
-    if (!selectedConstituencyCode || mode !== 'province') return
+    if (!selectedSchool) return
     const map = mapRef.current
-    const layer = provinceLayerRef.current
-    if (!map || !layer) return
-    layer.eachLayer((l: L.Layer) => {
-      const feat = (l as L.Layer & { feature?: GeoJSON.Feature }).feature
-      const p = feat?.properties as Record<string, unknown> | undefined
-      if (p?.HOR_CODE === selectedConstituencyCode) {
-        if (selectedLayerRef.current && selectedLayerRef.current !== l) {
-          selectedLayerRef.current.setStyle(defaultStyle)
-        }
-        selectedLayerRef.current = l as L.Path
-        ;(l as L.Path).setStyle(selectedStyle)
-        onSelectConstituency({
-          DISTRICT: String(p?.DISTRICT ?? ''),
-          FIRST_STAT: (p?.FIRST_STAT as number) ?? 0,
-          HOR_CODE: String(p?.HOR_CODE ?? ''),
-        })
-        const path = l as L.Path
-        if (path.getBounds) {
-          const bounds = path.getBounds()
-          map.fitBounds(bounds.pad(0.15))
-        }
-      }
-    })
-  }, [selectedConstituencyCode, mode, onSelectConstituency])
-
-  const showLegend = mode === 'province' && (mapOverlayMode === 'election' || mapOverlayMode === 'turnout')
+    const pin = MAP_PINS.find((p) => p.label === selectedSchool)
+    if (!map || !pin) return
+    map.flyTo([pin.lat, pin.lng], 14, { duration: 0.5 })
+  }, [selectedSchool])
 
   return (
     <div className="map-wrapper">
@@ -308,35 +240,6 @@ export function NepalMap({
       <button type="button" className="reset-view-btn" onClick={onResetView}>
         Show whole Nepal
       </button>
-      {showLegend && (
-        <div className="map-legend">
-          {mapOverlayMode === 'election' && (
-            <>
-              <span className="map-legend-title">Party (past election)</span>
-              <div className="map-legend-items">
-                {Object.entries(PARTY_COLORS).map(([id, color]) => (
-                  <span key={id} className="map-legend-item">
-                    <i style={{ background: color }} />
-                    {PARTY_LABELS[id] ?? id}
-                  </span>
-                ))}
-              </div>
-            </>
-          )}
-          {mapOverlayMode === 'turnout' && (
-            <>
-              <span className="map-legend-title">Voter turnout %</span>
-              <div className="map-legend-turnout">
-                <i style={{ background: turnoutToColor(50) }} />
-                <span>50%</span>
-                <span>→</span>
-                <i style={{ background: turnoutToColor(90) }} />
-                <span>90%</span>
-              </div>
-            </>
-          )}
-        </div>
-      )}
     </div>
   )
 }

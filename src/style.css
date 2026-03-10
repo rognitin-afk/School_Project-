@@ -44,34 +44,19 @@ body {
 .topbar-inner {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   letter-spacing: 0.01em;
 }
 
-.topbar-countdown {
+.topbar-brand {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
-.topbar-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: #22c55e;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.9);
-  animation: pulse 1.6s ease-out infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-  }
+.topbar-tagline {
+  font-size: 14px;
+  opacity: 0.95;
 }
 
 /* Filters */
@@ -377,10 +362,35 @@ body {
   margin-bottom: 8px;
 }
 
-.sidebar .sidebar-party {
-  color: #16a34a;
+.sidebar .sidebar-school-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 8px 0 12px 0;
+}
+
+.sidebar .sidebar-school-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 8px 0 12px 0;
+}
+
+.sidebar .sidebar-know-more-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #0f172a;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.sidebar .sidebar-know-more-btn:hover {
+  background: #1e293b;
 }
 
 /* Compare candidates modal */
@@ -593,4 +603,353 @@ body {
 .study-page__bio {
   margin-top: 12px;
   color: #334155;
+}
+
+/* School detail (Know more) page – responsive & stylish */
+.school-detail {
+  min-height: 100%;
+  background: linear-gradient(160deg, #f0f4ff 0%, #e8eef8 50%, #f8fafc 100%);
+  padding: clamp(16px, 4vw, 32px);
+  box-sizing: border-box;
+}
+
+.school-detail-inner {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.school-detail--error .school-detail-card {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px;
+  text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+}
+
+.school-detail-error-text {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  color: #475569;
+}
+
+/* Header: stacks on small screens */
+.school-detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-bottom: clamp(20px, 4vw, 28px);
+  padding-bottom: clamp(16px, 3vw, 20px);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.08);
+}
+
+.school-detail-back {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+
+.school-detail-back:hover {
+  color: #1d4ed8;
+}
+
+.school-detail-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(18px, 4vw, 26px);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.school-detail-download-pdf {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.school-detail-download-pdf:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+}
+
+.school-detail-download-pdf:active {
+  transform: translateY(0);
+}
+
+/* Report card */
+.school-report-content {
+  background: #fff;
+  padding: clamp(20px, 5vw, 36px);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(30, 41, 59, 0.06);
+}
+
+.school-report-hero {
+  margin-bottom: 20px;
+}
+
+.school-report-heading {
+  margin: 0 0 6px 0;
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.school-report-meta {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.school-report-figure {
+  margin: 0 0 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+}
+
+.school-report-figure--slider {
+  position: relative;
+}
+
+.school-report-img {
+  width: 100%;
+  display: block;
+  max-height: 420px;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+
+.school-report-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.72);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.school-report-slider-btn--prev {
+  left: 12px;
+}
+
+.school-report-slider-btn--next {
+  right: 12px;
+}
+
+.school-report-slider-btn:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.school-report-slider-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.school-report-slider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.school-report-slider-dot--active {
+  background: #0f172a;
+}
+
+.school-report-body {
+  font-size: clamp(15px, 2vw, 16px);
+  line-height: 1.65;
+  color: #334155;
+}
+
+.school-report-body p {
+  margin: 0 0 12px 0;
+}
+
+.school-report-body p:last-child {
+  margin-bottom: 0;
+}
+
+.school-report-summary-title {
+  margin: 0 0 12px 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Gallery: add more images here later – responsive grid */
+.school-report-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(30, 41, 59, 0.06);
+}
+
+.school-report-gallery:empty {
+  display: none;
+}
+
+.school-report-gallery-item {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.08);
+}
+
+/* Mind map – big, readable section */
+.school-report-mindmap {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(30, 41, 59, 0.06);
+}
+
+.school-report-mindmap-title {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.school-report-mindmap-text {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.school-report-mindmap-frame {
+  border-radius: 14px;
+  overflow: auto;
+  max-height: 70vh;
+  background: #0f172a;
+  padding: 8px;
+  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.45);
+  cursor: grab;
+}
+
+.school-report-mindmap-img {
+  display: block;
+  max-width: none;
+  width: 1200px;
+}
+
+.school-report-mindmap-frame--panning {
+  cursor: grabbing;
+}
+
+.school-report-mindmap-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.04);
+  margin-bottom: 10px;
+}
+
+.school-report-mindmap-zoom-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  background: #fff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school-report-mindmap-zoom-btn:hover {
+  background: #f1f5f9;
+}
+
+.school-report-mindmap-zoom-label {
+  font-size: 13px;
+  color: #475569;
+  min-width: 40px;
+  text-align: center;
+}
+
+.school-report-mindmap-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.school-report-mindmap-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .school-detail-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .school-detail-title {
+    order: -1;
+  }
+
+  .school-detail-download-pdf {
+    width: 100%;
+  }
+
+  .school-report-content {
+    padding: 18px;
+  }
+
+  .school-report-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .school-report-img {
+    max-height: 480px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .school-report-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
 }

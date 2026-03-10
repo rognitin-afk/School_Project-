@@ -1,42 +1,34 @@
 import type { Hierarchy } from '../types'
-import type { MapOverlayMode } from './NepalMap'
+import type { MapPin } from '../data/mapPins'
 
 interface FiltersBarProps {
   hierarchy: Hierarchy | null
   provinceCode: string
   district: string
-  constituencyCode: string
-  showOverlayControl?: boolean
-  mapOverlayMode?: MapOverlayMode
-  onMapOverlayChange?: (mode: MapOverlayMode) => void
-  partyFilter?: string
-  onPartyFilterChange?: (partyId: string) => void
-  onCompareClick?: () => void
+  schoolName: string
+  schools: MapPin[]
   onProvinceChange: (code: string) => void
   onDistrictChange: (name: string) => void
-  onConstituencyChange: (code: string) => void
+  onSchoolChange: (label: string) => void
 }
 
 export function FiltersBar({
   hierarchy,
   provinceCode,
   district,
-  constituencyCode,
-  showOverlayControl,
-  mapOverlayMode = 'default',
-  onMapOverlayChange,
-  partyFilter = '',
-  onPartyFilterChange,
-  onCompareClick,
+  schoolName,
+  schools,
   onProvinceChange,
   onDistrictChange,
-  onConstituencyChange,
+  onSchoolChange,
 }: FiltersBarProps) {
   const provinceCodes = hierarchy ? Object.keys(hierarchy).sort((a, b) => Number(a) - Number(b)) : []
   const districts = hierarchy && provinceCode ? Object.keys(hierarchy[provinceCode]?.districts ?? {}).sort() : []
-  const constituencies = hierarchy && provinceCode && district
-    ? (hierarchy[provinceCode]?.districts[district]?.constituencies ?? [])
-    : []
+  const schoolsInDistrict =
+    district && schools.length
+      ? schools.filter((s) => (s.district ?? '').toLowerCase() === district.toLowerCase())
+      : []
+  const schoolList = district && schoolsInDistrict.length > 0 ? schoolsInDistrict : schools
 
   return (
     <div className="filters-bar">
@@ -73,64 +65,21 @@ export function FiltersBar({
           </select>
         </div>
         <div className="filter-group">
-          <label htmlFor="const-select">House Of Representative No.</label>
+          <label htmlFor="school-select">School name</label>
           <select
-            id="const-select"
-            value={constituencyCode}
-            disabled={!district}
-            onChange={(e) => onConstituencyChange(e.target.value)}
+            id="school-select"
+            value={schoolName}
+            onChange={(e) => onSchoolChange(e.target.value)}
           >
             <option value="">Choose</option>
-            {constituencies.map((code) => (
-              <option key={code} value={code}>
-                {code}
+            {schoolList.map((s) => (
+              <option key={s.label} value={s.label}>
+                {s.label}
               </option>
             ))}
           </select>
         </div>
-        {onCompareClick && (
-          <div className="filter-group filter-group-action">
-            <label>&nbsp;</label>
-            <button type="button" className="compare-trigger-btn" onClick={onCompareClick}>
-              Compare candidates
-            </button>
-          </div>
-        )}
       </div>
-      {showOverlayControl && onMapOverlayChange && (
-        <div className="filters-row filters-row-overlay">
-          <div className="filter-group">
-            <label htmlFor="overlay-select">Map overlay</label>
-            <select
-              id="overlay-select"
-              value={mapOverlayMode}
-              onChange={(e) => onMapOverlayChange(e.target.value as MapOverlayMode)}
-            >
-              <option value="default">Default</option>
-              <option value="election">By party (past election)</option>
-              <option value="turnout">By turnout %</option>
-            </select>
-          </div>
-          {mapOverlayMode === 'election' && onPartyFilterChange && (
-            <div className="filter-group">
-              <label htmlFor="party-select">Party</label>
-              <select
-                id="party-select"
-                value={partyFilter}
-                onChange={(e) => onPartyFilterChange(e.target.value)}
-              >
-                <option value="">All parties</option>
-                <option value="uml">UML</option>
-                <option value="nc">NC</option>
-                <option value="maoist">Maoist</option>
-                <option value="rsp">RSP</option>
-                <option value="jsp">JSP</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          )}
-        </div>
-      )}
     </div>
   )
 }

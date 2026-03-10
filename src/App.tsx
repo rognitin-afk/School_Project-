@@ -3,38 +3,26 @@ import { Topbar } from './components/Topbar'
 import { FiltersBar } from './components/FiltersBar'
 import { NepalMap } from './components/NepalMap'
 import { Sidebar } from './components/Sidebar'
-import { ProvinceCandidatesBox } from './components/ProvinceCandidatesBox'
-import { CompareCandidates } from './components/CompareCandidates'
 import { fetchGeoJson } from './api/geojson'
-import { fetchCandidates } from './api/candidates'
-import { fetchElectionResults } from './api/electionResults'
 import { buildHierarchy } from './utils/hierarchy'
-import type { GeoJsonData, CandidatesMap, Hierarchy, SidebarProps, ElectionResultsMap } from './types'
-import type { MapOverlayMode } from './components/NepalMap'
+import { MAP_PINS } from './data/mapPins'
+import type { GeoJsonData, Hierarchy } from './types'
 
 function App() {
   const [fullData, setFullData] = useState<GeoJsonData | null>(null)
-  const [candidates, setCandidates] = useState<CandidatesMap>({})
   const [hierarchy, setHierarchy] = useState<Hierarchy | null>(null)
-  const [electionResults, setElectionResults] = useState<ElectionResultsMap>({})
-  const [sidebarProps, setSidebarProps] = useState<SidebarProps | null>(null)
   const [mode, setMode] = useState<'country' | 'province'>('country')
   const [currentProvinceCode, setCurrentProvinceCode] = useState<number | null>(null)
   const [provinceFilter, setProvinceFilter] = useState('')
   const [districtFilter, setDistrictFilter] = useState('')
-  const [constituencyFilter, setConstituencyFilter] = useState('')
-  const [mapOverlayMode, setMapOverlayMode] = useState<MapOverlayMode>('default')
-  const [partyFilter, setPartyFilter] = useState('')
-  const [compareOpen, setCompareOpen] = useState(false)
+  const [selectedSchool, setSelectedSchool] = useState('')
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    Promise.all([fetchGeoJson(), fetchCandidates(), fetchElectionResults()])
-      .then(([geo, cand, results]) => {
+    fetchGeoJson()
+      .then((geo) => {
         setFullData(geo)
-        setCandidates(cand)
         setHierarchy(buildHierarchy(geo.features ?? []))
-        setElectionResults(results)
       })
       .catch((err) => {
         setError(err instanceof Error ? err.message : 'Failed to load data')
@@ -46,12 +34,7 @@ function App() {
     setCurrentProvinceCode(provinceCode)
     setProvinceFilter(String(provinceCode))
     setDistrictFilter('')
-    setConstituencyFilter('')
-    setSidebarProps(null)
-  }, [])
-
-  const handleSelectConstituency = useCallback((props: SidebarProps) => {
-    setSidebarProps(props)
+    setSelectedSchool('')
   }, [])
 
   const handleResetView = useCallback(() => {
@@ -59,57 +42,34 @@ function App() {
     setCurrentProvinceCode(null)
     setProvinceFilter('')
     setDistrictFilter('')
-    setConstituencyFilter('')
-    setSidebarProps(null)
+    setSelectedSchool('')
   }, [])
 
   const handleProvinceChange = useCallback((code: string) => {
     setProvinceFilter(code)
     setDistrictFilter('')
-    setConstituencyFilter('')
+    setSelectedSchool('')
     if (!code) {
       setMode('country')
       setCurrentProvinceCode(null)
-      setSidebarProps(null)
       return
     }
     setMode('province')
     setCurrentProvinceCode(Number(code))
-    setSidebarProps(null)
   }, [])
 
   const handleDistrictChange = useCallback((name: string) => {
     setDistrictFilter(name)
-    setConstituencyFilter('')
+    setSelectedSchool('')
   }, [])
 
-  const handleConstituencyChange = useCallback((code: string) => {
-    setConstituencyFilter(code)
-    if (code && hierarchy && provinceFilter) {
-      const districtData = hierarchy[provinceFilter]?.districts[districtFilter]
-      const feat = districtData?.constituencies?.find((c) => c === code)
-      if (feat) {
-        setSidebarProps({
-          DISTRICT: districtFilter,
-          FIRST_STAT: Number(provinceFilter),
-          HOR_CODE: code,
-        })
-      }
-    }
-  }, [hierarchy, provinceFilter, districtFilter])
+  const handleSchoolChange = useCallback((label: string) => {
+    setSelectedSchool(label)
+  }, [])
 
-  const handleSelectCandidateFromBox = useCallback(
-    (horCode: string, district: string, firstStat: number) => {
-      setDistrictFilter(district)
-      setConstituencyFilter(horCode)
-      setSidebarProps({
-        DISTRICT: district,
-        FIRST_STAT: firstStat,
-        HOR_CODE: horCode,
-      })
-    },
-    []
-  )
+  const handleSelectSchool = useCallback((label: string) => {
+    setSelectedSchool(label)
+  }, [])
 
   if (error) {
     return (
@@ -126,16 +86,11 @@ function App() {
         hierarchy={hierarchy}
         provinceCode={provinceFilter}
         district={districtFilter}
-        constituencyCode={constituencyFilter}
-        showOverlayControl={mode === 'province'}
-        mapOverlayMode={mapOverlayMode}
-        onMapOverlayChange={setMapOverlayMode}
-        partyFilter={partyFilter}
-        onPartyFilterChange={setPartyFilter}
-        onCompareClick={() => setCompareOpen(true)}
+        schoolName={selectedSchool}
+        schools={MAP_PINS}
         onProvinceChange={handleProvinceChange}
         onDistrictChange={handleDistrictChange}
-        onConstituencyChange={handleConstituencyChange}
+        onSchoolChange={handleSchoolChange}
       />
       <div className="layout">
         <div className="layout-map-area">
@@ -143,31 +98,14 @@ function App() {
             fullData={fullData}
             mode={mode}
             currentProvinceCode={currentProvinceCode}
-            selectedConstituencyCode={constituencyFilter || null}
-            mapOverlayMode={mapOverlayMode}
-            electionResults={electionResults}
-            partyFilter={partyFilter}
+            selectedSchool={selectedSchool || null}
             onZoomToProvince={handleZoomToProvince}
-            onSelectConstituency={handleSelectConstituency}
+            onSelectSchool={handleSelectSchool}
             onResetView={handleResetView}
           />
-          {mode === 'province' && currentProvinceCode != null && (
-            <ProvinceCandidatesBox
-              provinceCode={currentProvinceCode}
-              candidates={candidates}
-              hierarchy={hierarchy}
-              selectedConstituencyCode={constituencyFilter || null}
-              onSelectCandidate={handleSelectCandidateFromBox}
-            />
-          )}
         </div>
-        <Sidebar props={sidebarProps} candidates={candidates} />
+        <Sidebar selectedSchool={selectedSchool || null} />
       </div>
-      <CompareCandidates
-        candidates={candidates}
-        isOpen={compareOpen}
-        onClose={() => setCompareOpen(false)}
-      />
     </div>
   )
 }
