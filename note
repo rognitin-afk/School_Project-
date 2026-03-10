@@ -1,0 +1,19 @@
+Here are some ideas that would fit really well with your app:
+Map & data features
+Election results overlay: Show past election winners/party colors per constituency (toggle on/off), so users can see strongholds and swing areas.
+Turnout heatmap: Shade constituencies by voter turnout percentage or population to show engagement/intensity.
+Compare candidates: Let users pick 2 candidates (same or different constituencies) and compare age, education, party, past wins, key promises.
+Candidate details
+Richer profiles: Add education, profession, previous positions, social links, key issues, and notable achievements.
+Promises vs performance: Tag each candidate’s main promises and later mark them as “in progress / done / not started”.
+Party view: Filter by party and highlight only that party’s candidates on the map.
+Filters & search
+Advanced filters: By age range, gender, party, incumbency (new vs sitting MP), urban/rural district.
+Smart search bar: Single search box that accepts candidate name, district, constituency code, or party and jumps directly there.
+Bookmarks / favorites: Let users “star” constituencies or candidates to quickly revisit them.
+UX & content
+Timeline mode: If you later add historical data, a slider to move across years and see how maps/candidates changed.
+Multilingual support: English/Nepali toggle (names, labels, UI).
+Election guide content: Plain-language explanations of what each body (House of Representatives, provinces) actually does, and how constituencies are formed.
+Shareable deep links: URL updates when a specific province/constituency/candidate is selected so users can share that exact view.
+If you tell me which 1–2 of these excite you the most, I can help you design them step-by-step (still without code at first, if you want).

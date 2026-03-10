@@ -1,0 +1,827 @@
+{
+  "ILAM-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 55
+  },
+  "ILAM-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 56
+  },
+  "UDAYAPUR-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 57
+  },
+  "UDAYAPUR-2": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 58
+  },
+  "OKHALDHUNGA-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 59
+  },
+  "KHOTANG-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 60
+  },
+  "JHAPA-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 61
+  },
+  "JHAPA-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 62
+  },
+  "JHAPA-3": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 63
+  },
+  "JHAPA-4": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 64
+  },
+  "JHAPA-5": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 65
+  },
+  "TAPLEJUNG-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 66
+  },
+  "TERHATHUM-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 67
+  },
+  "DHANKUTA-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 68
+  },
+  "PANCHTHAR-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 69
+  },
+  "BHOJPUR-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 70
+  },
+  "MORANG-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 71
+  },
+  "MORANG-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 72
+  },
+  "MORANG-3": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 73
+  },
+  "MORANG-4": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 74
+  },
+  "MORANG-5": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 75
+  },
+  "MORANG-6": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 76
+  },
+  "SANKHUWASABHA-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 77
+  },
+  "SUNSARI-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 78
+  },
+  "SUNSARI-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 79
+  },
+  "SUNSARI-3": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 80
+  },
+  "SUNSARI-4": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 81
+  },
+  "SOLUKHUMBU-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 82
+  },
+  "DHANUSHA-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 83
+  },
+  "DHANUSHA-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 84
+  },
+  "DHANUSHA-3": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 85
+  },
+  "DHANUSHA-4": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 55
+  },
+  "PARSA-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 56
+  },
+  "PARSA-2": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 57
+  },
+  "PARSA-3": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 58
+  },
+  "PARSA-4": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 59
+  },
+  "BARA-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 60
+  },
+  "BARA-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 61
+  },
+  "BARA-3": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 62
+  },
+  "BARA-4": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 63
+  },
+  "MAHOTTARI-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 64
+  },
+  "MAHOTTARI-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 65
+  },
+  "MAHOTTARI-3": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 66
+  },
+  "MAHOTTARI-4": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 67
+  },
+  "RAUTAHAT-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 68
+  },
+  "RAUTAHAT-2": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 69
+  },
+  "RAUTAHAT-3": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 70
+  },
+  "RAUTAHAT-4": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 71
+  },
+  "SAPTARI-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 72
+  },
+  "SAPTARI-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 73
+  },
+  "SAPTARI-3": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 74
+  },
+  "SAPTARI-4": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 75
+  },
+  "SARLAHI-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 76
+  },
+  "SARLAHI-2": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 77
+  },
+  "SARLAHI-3": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 78
+  },
+  "SARLAHI-4": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 79
+  },
+  "SIRAHA-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 80
+  },
+  "SIRAHA-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 81
+  },
+  "SIRAHA-3": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 82
+  },
+  "SIRAHA-4": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 83
+  },
+  "LALITPUR-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 84
+  },
+  "LALITPUR-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 85
+  },
+  "LALITPUR-3": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 55
+  },
+  "KATHMANDU-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 56
+  },
+  "KATHMANDU-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 57
+  },
+  "KATHMANDU-3": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 58
+  },
+  "KATHMANDU-4": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 59
+  },
+  "KATHMANDU-5": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 60
+  },
+  "KATHMANDU-6": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 61
+  },
+  "KATHMANDU-7": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 62
+  },
+  "KATHMANDU-8": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 63
+  },
+  "KATHMANDU-9": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 64
+  },
+  "KATHMANDU-10": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 65
+  },
+  "KABHREPALANCHOK-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 66
+  },
+  "KABHREPALANCHOK-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 67
+  },
+  "CHITAWAN-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 68
+  },
+  "CHITAWAN-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 69
+  },
+  "CHITAWAN-3": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 70
+  },
+  "DOLAKHA-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 71
+  },
+  "DHADING-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 72
+  },
+  "DHADING-2": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 73
+  },
+  "NUWAKOT-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 74
+  },
+  "NUWAKOT-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 75
+  },
+  "BHAKTAPUR-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 76
+  },
+  "BHAKTAPUR-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 77
+  },
+  "MAKAWANPUR-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 78
+  },
+  "MAKAWANPUR-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 79
+  },
+  "RASUWA-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 80
+  },
+  "RAMECHHAP-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 81
+  },
+  "SINDHUPALCHOK-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 82
+  },
+  "SINDHUPALCHOK-2": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 83
+  },
+  "SINDHULI-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 84
+  },
+  "SINDHULI-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 85
+  },
+  "NAWALPARASI_W-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 55
+  },
+  "NAWALPARASI_W-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 56
+  },
+  "KASKI-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 57
+  },
+  "KASKI-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 58
+  },
+  "KASKI-3": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 59
+  },
+  "GORKHA-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 60
+  },
+  "GORKHA-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 61
+  },
+  "TANAHU-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 62
+  },
+  "TANAHU-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 63
+  },
+  "PARBAT-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 64
+  },
+  "BAGLUNG-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 65
+  },
+  "BAGLUNG-2": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 66
+  },
+  "MANANG-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 67
+  },
+  "MUSTANG-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 68
+  },
+  "MYAGDI-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 69
+  },
+  "LAMJUNG-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 70
+  },
+  "SYANGJA-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 71
+  },
+  "SYANGJA-2": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 72
+  },
+  "ARGHAKHANCHI-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 73
+  },
+  "KAPILBASTU-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 74
+  },
+  "KAPILBASTU-2": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 75
+  },
+  "KAPILBASTU-3": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 76
+  },
+  "GULMI-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 77
+  },
+  "GULMI-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 78
+  },
+  "DANG-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 79
+  },
+  "DANG-2": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 80
+  },
+  "DANG-3": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 81
+  },
+  "NAWALPARASI_E-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 82
+  },
+  "NAWALPARASI_E-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 83
+  },
+  "PALPA-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 84
+  },
+  "PALPA-2": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 85
+  },
+  "PYUTHAN-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 55
+  },
+  "BARDIYA-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 56
+  },
+  "BARDIYA-2": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 57
+  },
+  "BANKE-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 58
+  },
+  "BANKE-2": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 59
+  },
+  "BANKE-3": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 60
+  },
+  "RUKUM_E-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 61
+  },
+  "RUPANDEHI-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 62
+  },
+  "RUPANDEHI-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 63
+  },
+  "RUPANDEHI-3": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 64
+  },
+  "RUPANDEHI-4": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 65
+  },
+  "RUPANDEHI-5": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 66
+  },
+  "ROLPA-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 67
+  },
+  "KALIKOT-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 68
+  },
+  "JAJARKOT-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 69
+  },
+  "JUMLA-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 70
+  },
+  "DOLPA-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 71
+  },
+  "DAILEKH-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 72
+  },
+  "DAILEKH-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 73
+  },
+  "MUGU-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 74
+  },
+  "RUKUM_W-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 75
+  },
+  "SALYAN-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 76
+  },
+  "SURKHET-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 77
+  },
+  "SURKHET-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 78
+  },
+  "HUMLA-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 79
+  },
+  "ACHHAM-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 80
+  },
+  "ACHHAM-2": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 81
+  },
+  "KANCHANPUR-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 82
+  },
+  "KANCHANPUR-2": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 83
+  },
+  "KANCHANPUR-3": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 84
+  },
+  "KAILALI-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 85
+  },
+  "KAILALI-2": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 55
+  },
+  "KAILALI-3": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 56
+  },
+  "KAILALI-4": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 57
+  },
+  "KAILALI-5": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 58
+  },
+  "DADELDHURA-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 59
+  },
+  "DOTI-1": {
+    "party": "CPN (UML)",
+    "partyId": "uml",
+    "turnoutPercent": 60
+  },
+  "DARCHULA-1": {
+    "party": "Nepali Congress",
+    "partyId": "nc",
+    "turnoutPercent": 61
+  },
+  "BAJHANG-1": {
+    "party": "CPN (Maoist Centre)",
+    "partyId": "maoist",
+    "turnoutPercent": 62
+  },
+  "BAJURA-1": {
+    "party": "Rastriya Swatantra Party",
+    "partyId": "rsp",
+    "turnoutPercent": 63
+  },
+  "BAITADI-1": {
+    "party": "Janata Samajwadi Party",
+    "partyId": "jsp",
+    "turnoutPercent": 64
+  }
+}

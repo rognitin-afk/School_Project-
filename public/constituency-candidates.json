@@ -1,0 +1,40 @@
+{
+  "JHAPA-5": [
+    {
+      "name": "Balen Shah",
+      "constituency": "Jhapa 5",
+      "district": "JHAPA",
+      "provinceCode": 1,
+      "provinceName": "Koshi",
+      "party": "Rastriya Swatantra Party (RSP)",
+      "role": "Former Mayor of Kathmandu",
+      "bio": "Balen Shah (Balendra Shah) is a structural engineer, rapper and former independent mayor of Kathmandu. After gaining national popularity for his anti-corruption stance and urban reforms, he joined the Rastriya Swatantra Party and chose to contest the federal election from Jhapa 5.",
+      "age": 35,
+      "education": "MSc Structural Engineering"
+    },
+    {
+      "name": "K. P. Sharma Oli",
+      "constituency": "Jhapa 5",
+      "district": "JHAPA",
+      "provinceCode": 1,
+      "provinceName": "Koshi",
+      "party": "CPN (UML)",
+      "role": "Former Prime Minister of Nepal",
+      "bio": "Khadga Prasad Sharma Oli is the long-time chair of CPN (UML) and former prime minister of Nepal. Jhapa 5 is his traditional stronghold where he has won multiple parliamentary elections.",
+      "age": 74,
+      "education": "Intermediate level"
+    },
+    {
+      "name": "Khagendra Pandav Adhikari",
+      "constituency": "Jhapa 5",
+      "district": "JHAPA",
+      "provinceCode": 1,
+      "provinceName": "Koshi",
+      "party": "Nepali Congress",
+      "role": "Former Jhapa 5 candidate",
+      "bio": "Khagendra Pandav Adhikari is a Nepali Congress politician who has previously contested the House of Representatives election from Jhapa 5.",
+      "education": "Bachelor's degree"
+    }
+  ]
+}
+

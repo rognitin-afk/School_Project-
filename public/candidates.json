@@ -1,0 +1,1379 @@
+{
+  "ILAM-1": {
+    "name": "Nishkal Rai",
+    "constituency": "Ilam 1",
+    "district": "ILAM",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "ILAM-2": {
+    "name": "Bhesraj Acharya",
+    "constituency": "Ilam 2",
+    "district": "ILAM",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "UDAYAPUR-1": {
+    "name": "Bidur Basnet",
+    "constituency": "Udayapur 1",
+    "district": "UDAYAPUR",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "UDAYAPUR-2": {
+    "name": "Ram Kumar Rai",
+    "constituency": "Udayapur 2",
+    "district": "UDAYAPUR",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "OKHALDHUNGA-1": {
+    "name": "Kumar Luitel",
+    "constituency": "Okhaldhunga 1",
+    "district": "OKHALDHUNGA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "KHOTANG-1": {
+    "name": "Bir Kaji Rai",
+    "constituency": "Khotang 1",
+    "district": "KHOTANG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "JHAPA-1": {
+    "name": "Keshav Raj Pande",
+    "constituency": "Jhapa 1",
+    "district": "JHAPA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "JHAPA-2": {
+    "name": "Sarita Prasai",
+    "constituency": "Jhapa 2",
+    "district": "JHAPA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "JHAPA-3": {
+    "name": "Rajendra Kumar Ghimire",
+    "constituency": "Jhapa 3",
+    "district": "JHAPA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "JHAPA-4": {
+    "name": "Deu Kumar Thebe",
+    "constituency": "Jhapa 4",
+    "district": "JHAPA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "JHAPA-5": {
+    "name": "Balen Shah",
+    "constituency": "Jhapa 5",
+    "district": "JHAPA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Rastriya Swatantra Party (RSP)",
+    "role": "Former Mayor of Kathmandu",
+    "bio": "Balen Shah (Balendra Shah) is a structural engineer, rapper and former independent mayor of Kathmandu. After gaining national popularity for his anti‑corruption stance and urban reforms, he joined the Rastriya Swatantra Party and chose to contest the federal election from Jhapa 5, challenging former prime minister K. P. Sharma Oli of CPN (UML).",
+    "age": 35,
+    "education": "MSc Structural Engineering"
+  },
+  "TAPLEJUNG-1": {
+    "name": "Gajendra Prasad Tumbahang Limbu",
+    "constituency": "Taplejung 1",
+    "district": "TAPLEJUNG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "TERHATHUM-1": {
+    "name": "Santosh Subba",
+    "constituency": "Terhathum 1",
+    "district": "TERHATHUM",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "DHANKUTA-1": {
+    "name": "Dinesh Rai",
+    "constituency": "Dhankuta 1",
+    "district": "DHANKUTA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "PANCHTHAR-1": {
+    "name": "Narendra Kumar Kerung",
+    "constituency": "Panchthar 1",
+    "district": "PANCHTHAR",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "BHOJPUR-1": {
+    "name": "Balkrishna Thapa",
+    "constituency": "Bhojpur 1",
+    "district": "BHOJPUR",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "MORANG-1": {
+    "name": "Khadga Bahadur Phago",
+    "constituency": "Morang 1",
+    "district": "MORANG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "MORANG-2": {
+    "name": "Minendra Prasad Rijal",
+    "constituency": "Morang 2",
+    "district": "MORANG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "MORANG-3": {
+    "name": "Sunil Kumar Sharma",
+    "constituency": "Morang 3",
+    "district": "MORANG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "MORANG-4": {
+    "name": "Guru Raj Ghimire",
+    "constituency": "Morang 4",
+    "district": "MORANG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "MORANG-5": {
+    "name": "Phool Kumar Lalwani",
+    "constituency": "Morang 5",
+    "district": "MORANG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "MORANG-6": {
+    "name": "Dr. Shekhar Koirala",
+    "constituency": "Morang 6",
+    "district": "MORANG",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "SANKHUWASABHA-1": {
+    "name": "Dipan Kumar Shrestha",
+    "constituency": "Sankhuwasabha 1",
+    "district": "SANKHUWASABHA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "SUNSARI-1": {
+    "name": "Sujendra Tamang",
+    "constituency": "Sunsari 1",
+    "district": "SUNSARI",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "SUNSARI-2": {
+    "name": "Rajiv Koirala",
+    "constituency": "Sunsari 2",
+    "district": "SUNSARI",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "SUNSARI-3": {
+    "name": "Bijay Kumar Gachhadar",
+    "constituency": "Sunsari 3",
+    "district": "SUNSARI",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "SUNSARI-4": {
+    "name": "Gyanendra Bahadur Karki",
+    "constituency": "Sunsari 4",
+    "district": "SUNSARI",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "SOLUKHUMBU-1": {
+    "name": "Prakash Singh Karki",
+    "constituency": "Solukhumbu 1",
+    "district": "SOLUKHUMBU",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  },
+  "DHANUSHA-1": {
+    "name": "Ram Paltan Sah",
+    "constituency": "Dhanusha 1",
+    "district": "DHANUSHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "DHANUSHA-2": {
+    "name": "Dinesh Prasad Yadav Parsaila",
+    "constituency": "Dhanusha 2",
+    "district": "DHANUSHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "DHANUSHA-3": {
+    "name": "Bimalendra Nidhi",
+    "constituency": "Dhanusha 3",
+    "district": "DHANUSHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "DHANUSHA-4": {
+    "name": "Mahendra Yadav",
+    "constituency": "Dhanusha 4",
+    "district": "DHANUSHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "PARSA-1": {
+    "name": "Anil Kumar Rungta",
+    "constituency": "Parsa 1",
+    "district": "PARSA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "PARSA-2": {
+    "name": "Ajay Kumar Chaurasiya",
+    "constituency": "Parsa 2",
+    "district": "PARSA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "PARSA-3": {
+    "name": "Surendra Prasad Chaudhary",
+    "constituency": "Parsa 3",
+    "district": "PARSA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "PARSA-4": {
+    "name": "Ramesh Rijal",
+    "constituency": "Parsa 4",
+    "district": "PARSA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "BARA-1": {
+    "name": "Shambhu Bahadur Budhathoki",
+    "constituency": "Bara 1",
+    "district": "BARA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "BARA-2": {
+    "name": "Bhaiyaram Prasad Yadav",
+    "constituency": "Bara 2",
+    "district": "BARA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "BARA-3": {
+    "name": "Farmullah Mansur",
+    "constituency": "Bara 3",
+    "district": "BARA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "BARA-4": {
+    "name": "Shyambabu Gupta",
+    "constituency": "Bara 4",
+    "district": "BARA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "MAHOTTARI-1": {
+    "name": "Mukesh Raj Kafle",
+    "constituency": "Mahottari 1",
+    "district": "MAHOTTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "MAHOTTARI-2": {
+    "name": "Kiran Yadav",
+    "constituency": "Mahottari 2",
+    "district": "MAHOTTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "MAHOTTARI-3": {
+    "name": "Bajrang Nepali",
+    "constituency": "Mahottari 3",
+    "district": "MAHOTTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "MAHOTTARI-4": {
+    "name": "Mahendra Kumar Ray",
+    "constituency": "Mahottari 4",
+    "district": "MAHOTTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "RAUTAHAT-1": {
+    "name": "Anil Kumar Jha",
+    "constituency": "Rautahat 1",
+    "district": "RAUTAHAT",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "RAUTAHAT-2": {
+    "name": "Md. Firdaus Alam",
+    "constituency": "Rautahat 2",
+    "district": "RAUTAHAT",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "RAUTAHAT-3": {
+    "name": "Ramkripal Prasad Yadav",
+    "constituency": "Rautahat 3",
+    "district": "RAUTAHAT",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "RAUTAHAT-4": {
+    "name": "Dev Prasad Timalsena",
+    "constituency": "Rautahat 4",
+    "district": "RAUTAHAT",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SAPTARI-1": {
+    "name": "Ramdev Sah (Teli)",
+    "constituency": "Saptari 1",
+    "district": "SAPTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SAPTARI-2": {
+    "name": "Ram Kumar Yadav",
+    "constituency": "Saptari 2",
+    "district": "SAPTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SAPTARI-3": {
+    "name": "Dinesh Kumar Yadav",
+    "constituency": "Saptari 3",
+    "district": "SAPTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SAPTARI-4": {
+    "name": "Teju Lal Chaudhary",
+    "constituency": "Saptari 4",
+    "district": "SAPTARI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SARLAHI-1": {
+    "name": "Shambhu Lal Shrestha",
+    "constituency": "Sarlahi 1",
+    "district": "SARLAHI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SARLAHI-2": {
+    "name": "Dr. Saroj Kumar",
+    "constituency": "Sarlahi 2",
+    "district": "SARLAHI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SARLAHI-3": {
+    "name": "Binod Kumar Khanal",
+    "constituency": "Sarlahi 3",
+    "district": "SARLAHI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SARLAHI-4": {
+    "name": "Gagan Kumar Thapa",
+    "constituency": "Sarlahi 4",
+    "district": "SARLAHI",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "image": "/candidate-images/gagan-kumar-thapa.png",
+    "bio": "Gagan Kumar Thapa was born on July 19, 1976, in Kathmandu, Bagmati Province, into a middle-class family that valued education and democratic ideals. His father, Mahendra Kumar Thapa, worked as an engineer at Nepal Electricity Authority, while his mother, Rameshwari Thapa, nurtured his early interest in social justice.",
+    "age": 48,
+    "education": "MA Political Science, Tribhuvan University",
+    "party": "Nepali Congress",
+    "pastWins": [
+      "Kathmandu 4 (2017)",
+      "Sarlahi 4 (2022)"
+    ],
+    "keyPromises": [
+      "Healthcare access",
+      "Education reform",
+      "Youth employment"
+    ],
+    "role": "Party President"
+  },
+  "SIRAHA-1": {
+    "name": "Ram Sundar Chaudhary",
+    "constituency": "Siraha 1",
+    "district": "SIRAHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SIRAHA-2": {
+    "name": "Ram Chandra Yadav",
+    "constituency": "Siraha 2",
+    "district": "SIRAHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SIRAHA-3": {
+    "name": "Subhash Chandra Yadav",
+    "constituency": "Siraha 3",
+    "district": "SIRAHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "SIRAHA-4": {
+    "name": "Chandra Kala Kumari Yadav",
+    "constituency": "Siraha 4",
+    "district": "SIRAHA",
+    "provinceCode": 2,
+    "provinceName": "Madhesh",
+    "party": "Nepali Congress"
+  },
+  "LALITPUR-1": {
+    "name": "Uday Shamsher J.B. Rana",
+    "constituency": "Lalitpur 1",
+    "district": "LALITPUR",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "LALITPUR-2": {
+    "name": "Prem Krishna Maharjan",
+    "constituency": "Lalitpur 2",
+    "district": "LALITPUR",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "LALITPUR-3": {
+    "name": "Jitendra Kumar Shrestha",
+    "constituency": "Lalitpur 3",
+    "district": "LALITPUR",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-1": {
+    "name": "Prabal Thapa Kshetri",
+    "constituency": "Kathmandu 1",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-2": {
+    "name": "Kabir Sharma",
+    "constituency": "Kathmandu 2",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-3": {
+    "name": "Ramesh Aryal",
+    "constituency": "Kathmandu 3",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "age": 45,
+    "education": "MBA",
+    "party": "Nepali Congress",
+    "pastWins": [
+      "Kathmandu 3 (2022)"
+    ],
+    "keyPromises": [
+      "Urban development",
+      "Traffic solutions",
+      "Clean city"
+    ]
+  },
+  "KATHMANDU-4": {
+    "name": "Sachin Timalsena",
+    "constituency": "Kathmandu 4",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-5": {
+    "name": "Pradeep Paudel",
+    "constituency": "Kathmandu 5",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-6": {
+    "name": "Krishna Baniya Kshetri",
+    "constituency": "Kathmandu 6",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-7": {
+    "name": "Pramod Hari Gura Gai",
+    "constituency": "Kathmandu 7",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-8": {
+    "name": "Sapna Rajbhandari",
+    "constituency": "Kathmandu 8",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-9": {
+    "name": "Nanu Maya Bastola",
+    "constituency": "Kathmandu 9",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KATHMANDU-10": {
+    "name": "Himal Karki",
+    "constituency": "Kathmandu 10",
+    "district": "KATHMANDU",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KABHREPALANCHOK-1": {
+    "name": "Gunaraj Muktan",
+    "constituency": "Kavrepalanchok 1",
+    "district": "KABHREPALANCHOK",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "KABHREPALANCHOK-2": {
+    "name": "Madhu Prasad Acharya",
+    "constituency": "Kavrepalanchok 2",
+    "district": "KABHREPALANCHOK",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "CHITAWAN-1": {
+    "name": "Rajendra Prasad Burlakoti",
+    "constituency": "Chitwan 1",
+    "district": "CHITAWAN",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "CHITAWAN-2": {
+    "name": "Mina Kumari Kharel",
+    "constituency": "Chitwan 2",
+    "district": "CHITAWAN",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "CHITAWAN-3": {
+    "name": "Tek Prasad Gurung",
+    "constituency": "Chitwan 3",
+    "district": "CHITAWAN",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "DOLAKHA-1": {
+    "name": "Ajay Babu Shivakoti",
+    "constituency": "Dolakha 1",
+    "district": "DOLAKHA",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "DHADING-1": {
+    "name": "Krishna Rijal",
+    "constituency": "Dhading 1",
+    "district": "DHADING",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "DHADING-2": {
+    "name": "Ramesh Prasad Dhamala",
+    "constituency": "Dhading 2",
+    "district": "DHADING",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "NUWAKOT-1": {
+    "name": "Prakash Sharan Mahat",
+    "constituency": "Nuwakot 1",
+    "district": "NUWAKOT",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "age": 62,
+    "education": "PhD Economics",
+    "party": "Nepali Congress",
+    "pastWins": [
+      "Nuwakot 1 (2013)",
+      "Nuwakot 1 (2017)",
+      "Nuwakot 1 (2022)"
+    ],
+    "keyPromises": [
+      "Economic growth",
+      "Infrastructure",
+      "Agriculture support"
+    ]
+  },
+  "NUWAKOT-2": {
+    "name": "Jagadishwor Narasingh K.C.",
+    "constituency": "Nuwakot 2",
+    "district": "NUWAKOT",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "BHAKTAPUR-1": {
+    "name": "Kiran Newpane",
+    "constituency": "Bhaktapur 1",
+    "district": "BHAKTAPUR",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "BHAKTAPUR-2": {
+    "name": "Kabir Rana",
+    "constituency": "Bhaktapur 2",
+    "district": "BHAKTAPUR",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "MAKAWANPUR-1": {
+    "name": "Mahalakshmi Upadhyay (Dina)",
+    "constituency": "Makwanpur 1",
+    "district": "MAKAWANPUR",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "MAKAWANPUR-2": {
+    "name": "Buddh Lama",
+    "constituency": "Makwanpur 2",
+    "district": "MAKAWANPUR",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "RASUWA-1": {
+    "name": "Mohan Acharya",
+    "constituency": "Rasuwa 1",
+    "district": "RASUWA",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "RAMECHHAP-1": {
+    "name": "Ram Chandra Khadka",
+    "constituency": "Ramechhap 1",
+    "district": "RAMECHHAP",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "SINDHUPALCHOK-1": {
+    "name": "Jung Bahadur Lama",
+    "constituency": "Sindhupalchok 1",
+    "district": "SINDHUPALCHOK",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "SINDHUPALCHOK-2": {
+    "name": "Vanshalal Tamang",
+    "constituency": "Sindhupalchok 2",
+    "district": "SINDHUPALCHOK",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "SINDHULI-1": {
+    "name": "Ujjwal Prasad Baral",
+    "constituency": "Sindhuli 1",
+    "district": "SINDHULI",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "SINDHULI-2": {
+    "name": "Sushila Thing",
+    "constituency": "Sindhuli 2",
+    "district": "SINDHULI",
+    "provinceCode": 3,
+    "provinceName": "Bagmati",
+    "party": "Nepali Congress"
+  },
+  "NAWALPARASI_W-1": {
+    "name": "Binod Kumar Chaudhary",
+    "constituency": "Nawalparasi West 1",
+    "district": "NAWALPARASI_W",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "NAWALPARASI_W-2": {
+    "name": "Bhim Bahadur Thapa Chhetri",
+    "constituency": "Nawalparasi West 2",
+    "district": "NAWALPARASI_W",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "KASKI-1": {
+    "name": "Tilak Bahadur Ranabhat",
+    "constituency": "Kaski 1",
+    "district": "KASKI",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "KASKI-2": {
+    "name": "Madhav Prasad Bastola",
+    "constituency": "Kaski 2",
+    "district": "KASKI",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "KASKI-3": {
+    "name": "Manoj Gurung",
+    "constituency": "Kaski 3",
+    "district": "KASKI",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "GORKHA-1": {
+    "name": "Prem Kumar Khatri",
+    "constituency": "Gorkha 1",
+    "district": "GORKHA",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "GORKHA-2": {
+    "name": "Prakash Chandra Dawadi",
+    "constituency": "Gorkha 2",
+    "district": "GORKHA",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "TANAHU-1": {
+    "name": "Govind Bhattarai",
+    "constituency": "Tanahu 1",
+    "district": "TANAHU",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "TANAHU-2": {
+    "name": "Shankar Bhandari",
+    "constituency": "Tanahu 2",
+    "district": "TANAHU",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "PARBAT-1": {
+    "name": "Arjun Prasad Joshi",
+    "constituency": "Parbat 1",
+    "district": "PARBAT",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "BAGLUNG-1": {
+    "name": "Bhim Bahadur Shrees Rana",
+    "constituency": "Baglung 1",
+    "district": "BAGLUNG",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "BAGLUNG-2": {
+    "name": "Tek Raj Paudel",
+    "constituency": "Baglung 2",
+    "district": "BAGLUNG",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "MANANG-1": {
+    "name": "Tek Bahadur Gurung",
+    "constituency": "Manang 1",
+    "district": "MANANG",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "MUSTANG-1": {
+    "name": "Yogesh Gauchan Thakali",
+    "constituency": "Mustang 1",
+    "district": "MUSTANG",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "MYAGDI-1": {
+    "name": "Karn Bahadur Bhandari",
+    "constituency": "Myagdi 1",
+    "district": "MYAGDI",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "LAMJUNG-1": {
+    "name": "Gam Prasad Gurung",
+    "constituency": "Lamjung 1",
+    "district": "LAMJUNG",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "SYANGJA-1": {
+    "name": "Bharat Raj Dhakal",
+    "constituency": "Syangja 1",
+    "district": "SYANGJA",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "SYANGJA-2": {
+    "name": "Bhagawat Prakash Malla",
+    "constituency": "Syangja 2",
+    "district": "SYANGJA",
+    "provinceCode": 4,
+    "provinceName": "Gandaki",
+    "party": "Nepali Congress"
+  },
+  "ARGHAKHANCHI-1": {
+    "name": "Vishnu Prasad Khanal",
+    "constituency": "Arghakhanchi 1",
+    "district": "ARGHAKHANCHI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "KAPILBASTU-1": {
+    "name": "Atahar Kamal Musalman",
+    "constituency": "Kapilbastu 1",
+    "district": "KAPILBASTU",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "KAPILBASTU-2": {
+    "name": "Surendra Raj Acharya",
+    "constituency": "Kapilbastu 2",
+    "district": "KAPILBASTU",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "KAPILBASTU-3": {
+    "name": "Abhishek Pratap Shah",
+    "constituency": "Kapilbastu 3",
+    "district": "KAPILBASTU",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "GULMI-1": {
+    "name": "Chandrakant Bhandari",
+    "constituency": "Gulmi 1",
+    "district": "GULMI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "GULMI-2": {
+    "name": "Bhuvan Prasad Shrestha",
+    "constituency": "Gulmi 2",
+    "district": "GULMI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "DANG-1": {
+    "name": "Yogendra Chaudhary",
+    "constituency": "Dang 1",
+    "district": "DANG",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "DANG-2": {
+    "name": "Kiran Kishor Ghimire",
+    "constituency": "Dang 2",
+    "district": "DANG",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "DANG-3": {
+    "name": "Dipak Giri",
+    "constituency": "Dang 3",
+    "district": "DANG",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "NAWALPARASI_E-1": {
+    "name": "Vinod Kumar Chaudhary",
+    "constituency": "Nawalparasi East 1",
+    "district": "NAWALPARASI_E",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "NAWALPARASI_E-2": {
+    "name": "Bhim Bahadur Thapa",
+    "constituency": "Nawalparasi East 2",
+    "district": "NAWALPARASI_E",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "PALPA-1": {
+    "name": "Sandeep Rana",
+    "constituency": "Palpa 1",
+    "district": "PALPA",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "PALPA-2": {
+    "name": "Himal Dutt Shrestha",
+    "constituency": "Palpa 2",
+    "district": "PALPA",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "PYUTHAN-1": {
+    "name": "Dr. Govind Raj Pokhrel",
+    "constituency": "Pyuthan 1",
+    "district": "PYUTHAN",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "BARDIYA-1": {
+    "name": "Sanjay Kumar Gautam",
+    "constituency": "Bardiya 1",
+    "district": "BARDIYA",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "BARDIYA-2": {
+    "name": "Kishor Singh Rathor",
+    "constituency": "Bardiya 2",
+    "district": "BARDIYA",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "BANKE-1": {
+    "name": "Narayan Prasad Gaudel",
+    "constituency": "Banke 1",
+    "district": "BANKE",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "BANKE-2": {
+    "name": "Sudhanshu Koirala",
+    "constituency": "Banke 2",
+    "district": "BANKE",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "BANKE-3": {
+    "name": "Amar Singh Pun",
+    "constituency": "Banke 3",
+    "district": "BANKE",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "RUKUM_E-1": {
+    "name": "Kusum Devi Thapa",
+    "constituency": "Rukum East 1",
+    "district": "RUKUM_E",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "RUPANDEHI-1": {
+    "name": "Hira Bahadur Khatri",
+    "constituency": "Rupandehi 1",
+    "district": "RUPANDEHI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "RUPANDEHI-2": {
+    "name": "Chunn Prasad Sharma",
+    "constituency": "Rupandehi 2",
+    "district": "RUPANDEHI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "RUPANDEHI-3": {
+    "name": "Sushil Gurung",
+    "constituency": "Rupandehi 3",
+    "district": "RUPANDEHI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "RUPANDEHI-4": {
+    "name": "Ashutosh Mishra",
+    "constituency": "Rupandehi 4",
+    "district": "RUPANDEHI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "RUPANDEHI-5": {
+    "name": "Bharat Kumar Shah",
+    "constituency": "Rupandehi 5",
+    "district": "RUPANDEHI",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "ROLPA-1": {
+    "name": "Sudan Kumar Wali",
+    "constituency": "Rolpa 1",
+    "district": "ROLPA",
+    "provinceCode": 5,
+    "provinceName": "Lumbini",
+    "party": "Nepali Congress"
+  },
+  "KALIKOT-1": {
+    "name": "Harsh Bahadur Bam",
+    "constituency": "Kalikot 1",
+    "district": "KALIKOT",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "JAJARKOT-1": {
+    "name": "Khadka Bahadur Budha",
+    "constituency": "Jajarkot 1",
+    "district": "JAJARKOT",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "JUMLA-1": {
+    "name": "Dip Bahadur Shahi",
+    "constituency": "Jumla 1",
+    "district": "JUMLA",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "DOLPA-1": {
+    "name": "Karn Bahadur Budha",
+    "constituency": "Dolpa 1",
+    "district": "DOLPA",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "DAILEKH-1": {
+    "name": "Basna Thapa",
+    "constituency": "Dailekh 1",
+    "district": "DAILEKH",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "DAILEKH-2": {
+    "name": "Dikpal Kumar Shahi",
+    "constituency": "Dailekh 2",
+    "district": "DAILEKH",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "MUGU-1": {
+    "name": "Khadga Shahi",
+    "constituency": "Mugu 1",
+    "district": "MUGU",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "RUKUM_W-1": {
+    "name": "Raju K.C.",
+    "constituency": "Rukum West 1",
+    "district": "RUKUM_W",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "SALYAN-1": {
+    "name": "Kesh Bahadur Bisht",
+    "constituency": "Salyan 1",
+    "district": "SALYAN",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "SURKHET-1": {
+    "name": "Vishnu Bahadur Khadka",
+    "constituency": "Surkhet 1",
+    "district": "SURKHET",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "SURKHET-2": {
+    "name": "Narayan Kumar Koirala",
+    "constituency": "Surkhet 2",
+    "district": "SURKHET",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "HUMLA-1": {
+    "name": "Jay Pati Rokaya",
+    "constituency": "Humla 1",
+    "district": "HUMLA",
+    "provinceCode": 6,
+    "provinceName": "Karnali",
+    "party": "Nepali Congress"
+  },
+  "ACHHAM-1": {
+    "name": "Bharat Kumar Swar",
+    "constituency": "Achham 1",
+    "district": "ACHHAM",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "ACHHAM-2": {
+    "name": "Pushpa Bahadur Shah",
+    "constituency": "Achham 2",
+    "district": "ACHHAM",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KANCHANPUR-1": {
+    "name": "Gopi Prasad Upadhyay",
+    "constituency": "Kanchanpur 1",
+    "district": "KANCHANPUR",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KANCHANPUR-2": {
+    "name": "Narayan Prakash Saud",
+    "constituency": "Kanchanpur 2",
+    "district": "KANCHANPUR",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KANCHANPUR-3": {
+    "name": "Hari Prasad Bohara",
+    "constituency": "Kanchanpur 3",
+    "district": "KANCHANPUR",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KAILALI-1": {
+    "name": "Janakraj Chaudhary",
+    "constituency": "Kailali 1",
+    "district": "KAILALI",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KAILALI-2": {
+    "name": "Vijay Bahadur Swar",
+    "constituency": "Kailali 2",
+    "district": "KAILALI",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KAILALI-3": {
+    "name": "Bhim Baduwal",
+    "constituency": "Kailali 3",
+    "district": "KAILALI",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KAILALI-4": {
+    "name": "Gorakh Bahadur Bisht",
+    "constituency": "Kailali 4",
+    "district": "KAILALI",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "KAILALI-5": {
+    "name": "Nar Narayan Shah",
+    "constituency": "Kailali 5",
+    "district": "KAILALI",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "DADELDHURA-1": {
+    "name": "Nain Singh Mahar",
+    "constituency": "Dadeldhura 1",
+    "district": "DADELDHURA",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "DOTI-1": {
+    "name": "Bharat Bahadur Khadka",
+    "constituency": "Doti 1",
+    "district": "DOTI",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "DARCHULA-1": {
+    "name": "Dharmanand Joshi",
+    "constituency": "Darchula 1",
+    "district": "DARCHULA",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "BAJHANG-1": {
+    "name": "Prakash Rasaili Snehi",
+    "constituency": "Bajhang 1",
+    "district": "BAJHANG",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "BAJURA-1": {
+    "name": "Janak Raj Giri",
+    "constituency": "Bajura 1",
+    "district": "BAJURA",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "BAITADI-1": {
+    "name": "Chatur Bahadur Chand",
+    "constituency": "Baitadi 1",
+    "district": "BAITADI",
+    "provinceCode": 7,
+    "provinceName": "Sudurpashchim",
+    "party": "Nepali Congress"
+  },
+  "JHAPA-5-OLI": {
+    "name": "K. P. Sharma Oli",
+    "constituency": "Jhapa 5",
+    "district": "JHAPA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "CPN (UML)",
+    "role": "Former Prime Minister of Nepal"
+  },
+  "JHAPA-5-NC": {
+    "name": "Khagendra Pandav Adhikari",
+    "constituency": "Jhapa 5",
+    "district": "JHAPA",
+    "provinceCode": 1,
+    "provinceName": "Koshi",
+    "party": "Nepali Congress"
+  }
+}
