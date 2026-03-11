@@ -60,7 +60,7 @@ export function NepalMap({
   useEffect(() => {
     if (!containerRef.current || !fullData) return
 
-    const map = L.map(containerRef.current, { zoomControl: false })
+    const map = L.map(containerRef.current, { zoomControl: false, attributionControl: false })
     L.control.zoom({ position: 'topleft' }).addTo(map)
     mapRef.current = map
 
@@ -80,6 +80,8 @@ export function NepalMap({
   useEffect(() => {
     const map = mapRef.current
     if (!map || !fullData) return
+
+    let bounds: L.LatLngBounds | null = null
 
     function getBaseStyleForFeature(
       feature: GeoJSON.Feature,
@@ -194,7 +196,7 @@ export function NepalMap({
       const layer = buildLayerFromFeatures(fullData.features as GeoJSON.Feature[], 'country')
       layer.addTo(map)
       nepalLayerRef.current = layer
-      const bounds = layer.getBounds()
+      bounds = layer.getBounds()
       map.fitBounds(bounds)
       map.setMaxBounds(bounds.pad(0.05))
     } else if (currentProvinceCode != null) {
@@ -204,7 +206,7 @@ export function NepalMap({
       const layer = buildLayerFromFeatures(provinceFeatures as GeoJSON.Feature[], 'province')
       layer.addTo(map)
       provinceLayerRef.current = layer
-      const bounds = layer.getBounds()
+      bounds = layer.getBounds()
       map.fitBounds(bounds)
       map.setMaxBounds(bounds.pad(0.05))
     }
@@ -217,6 +219,9 @@ export function NepalMap({
     })
     const pinsGroup = L.layerGroup()
     MAP_PINS.forEach((pin) => {
+      if (bounds && !bounds.contains([pin.lat, pin.lng])) {
+        return
+      }
       const marker = L.marker([pin.lat, pin.lng], { icon: pinIcon })
       marker.bindPopup(pin.label)
       marker.on('click', () => onSelectSchool(pin.label))

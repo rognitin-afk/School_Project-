@@ -393,6 +393,30 @@ body {
   background: #1e293b;
 }
 
+/* Responsive layout */
+@media (max-width: 768px) {
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .layout-map-area {
+    order: 1;
+    min-height: 260px;
+  }
+
+  .sidebar {
+    order: 2;
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+    max-height: 320px;
+  }
+}
+
 /* Compare candidates modal */
 .compare-overlay {
   position: fixed;
