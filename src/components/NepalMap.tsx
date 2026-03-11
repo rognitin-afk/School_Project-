@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 import L from 'leaflet'
 import type { GeoJsonData } from '../types'
 import {
@@ -49,6 +49,8 @@ export function NepalMap({
   const provinceLayerRef = useRef<L.GeoJSON | null>(null)
   const selectedLayerRef = useRef<L.Path | null>(null)
   const pinsLayerRef = useRef<L.LayerGroup | null>(null)
+  const satelliteLayerRef = useRef<L.TileLayer | null>(null)
+  const [isSatellite, setIsSatellite] = useState(false)
 
   const clearSelection = useCallback(() => {
     if (selectedLayerRef.current) {
@@ -69,6 +71,10 @@ export function NepalMap({
         map.removeLayer(pinsLayerRef.current)
         pinsLayerRef.current = null
       }
+      if (satelliteLayerRef.current) {
+        map.removeLayer(satelliteLayerRef.current)
+        satelliteLayerRef.current = null
+      }
       map.remove()
       mapRef.current = null
       nepalLayerRef.current = null
@@ -82,6 +88,22 @@ export function NepalMap({
     if (!map || !fullData) return
 
     let bounds: L.LatLngBounds | null = null
+
+    // Toggle satellite basemap (country or province view)
+    if (isSatellite) {
+      if (!satelliteLayerRef.current) {
+        satelliteLayerRef.current = L.tileLayer(
+          'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          {
+            attribution: 'Imagery © Esri & partners',
+            maxZoom: 19,
+          }
+        )
+      }
+      satelliteLayerRef.current.addTo(map)
+    } else if (satelliteLayerRef.current) {
+      map.removeLayer(satelliteLayerRef.current)
+    }
 
     function getBaseStyleForFeature(
       feature: GeoJSON.Feature,
@@ -163,7 +185,16 @@ export function NepalMap({
           ;(selectedLayerRef.current as L.Path).setStyle(defaultStyle)
         }
         selectedLayerRef.current = this as L.Path
-        ;(this as L.Path).setStyle(selectedStyle)
+        const styleForSelection: L.PathOptions =
+          viewMode === 'province' && isSatellite
+            ? {
+                color: '#2563eb',
+                weight: 2.4,
+                fillColor: 'transparent',
+                fillOpacity: 0,
+              }
+            : selectedStyle
+        ;(this as L.Path).setStyle(styleForSelection)
       })
     }
 
@@ -229,7 +260,7 @@ export function NepalMap({
     })
     pinsGroup.addTo(map)
     pinsLayerRef.current = pinsGroup
-  }, [fullData, mode, currentProvinceCode, onZoomToProvince, onSelectSchool, clearSelection])
+  }, [fullData, mode, currentProvinceCode, onZoomToProvince, onSelectSchool, clearSelection, isSatellite])
 
   useEffect(() => {
     if (!selectedSchool) return
@@ -242,6 +273,13 @@ export function NepalMap({
   return (
     <div className="map-wrapper">
       <div ref={containerRef} className="map-container" />
+      <button
+        type="button"
+        className="satellite-toggle-btn"
+        onClick={() => setIsSatellite((prev) => !prev)}
+      >
+        {isSatellite ? 'Map view' : 'Satellite view'}
+      </button>
       <button type="button" className="reset-view-btn" onClick={onResetView}>
         Show whole Nepal
       </button>
