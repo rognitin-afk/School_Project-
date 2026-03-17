@@ -23,6 +23,12 @@ export function SchoolDetailPage() {
   const summary = slug ? getSchoolSummaryBySlug(slug) : undefined
 
   const handleDownloadPdf = async () => {
+    // For Ram Naresh school, use the prepared project PDF directly
+    if (slug === 'shre-ram-naresh-laxman-secondary-school-hajminiya') {
+      window.open('/pdffile/Final Project Progress Reports_27 January 2025 (3).pdf', '_blank')
+      return
+    }
+
     const el = reportRef.current
     if (!el) return
     try {

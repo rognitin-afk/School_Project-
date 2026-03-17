@@ -33,6 +33,32 @@ export const MAP_PINS: MapPin[] = [
     sidebarImage: '/candidate-images/schoolRamNaresah.png',
     slug: 'shre-ram-naresh-laxman-secondary-school-hajminiya',
   },
+  {
+    // Approximate coordinates near Ram Naresh school – adjust later if needed
+    lat: 26.7832,
+    lng: 85.3045,
+    label: 'Shree Basic school Hajminiya Patahi',
+    district: '',
+    image: '/School image/Shree Basic school Hajminiya Patahi/Shree Basic school Hajminiya Patahi.png',
+    slug: 'shree-basic-school-hajminiya-patahi',
+  },
+  {
+    // Approximate coordinates for Janta Model Secondary School – update if you have exact lat/lng
+    lat: 26.803,
+    lng: 85.302,
+    label: 'Janta Model secondary school',
+    district: '',
+    image: '/School image/Janta Model secondary school/Janta Model secondary school.png',
+    slug: 'janta-model-secondary-school',
+  },
+  {
+    lat: 26.7609677,
+    lng: 85.2729177,
+    label: 'Judh Mabi Multiple Campus',
+    district: 'Rautahat',
+    image: '/School image/judh/judha.png',
+    slug: 'judh-mabi-multiple-campus',
+  },
 ]
 
 export function getPinBySlug(slug: string): MapPin | undefined {
