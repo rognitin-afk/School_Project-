@@ -32,6 +32,8 @@ interface NepalMapProps {
   onZoomToProvince: (provinceCode: number) => void
   onSelectSchool: (label: string) => void
   onResetView: () => void
+  /** When a constituency polygon is clicked in province view; DISTRICT from GeoJSON (e.g. RAUTAHAT). */
+  onSelectDistrict?: (districtName: string) => void
 }
 
 export function NepalMap({
@@ -42,6 +44,7 @@ export function NepalMap({
   onZoomToProvince,
   onSelectSchool,
   onResetView,
+  onSelectDistrict,
 }: NepalMapProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<L.Map | null>(null)
@@ -195,6 +198,9 @@ export function NepalMap({
               }
             : selectedStyle
         ;(this as L.Path).setStyle(styleForSelection)
+        if (viewMode === 'province' && district && onSelectDistrict) {
+          onSelectDistrict(district)
+        }
       })
     }
 
@@ -260,7 +266,16 @@ export function NepalMap({
     })
     pinsGroup.addTo(map)
     pinsLayerRef.current = pinsGroup
-  }, [fullData, mode, currentProvinceCode, onZoomToProvince, onSelectSchool, clearSelection, isSatellite])
+  }, [
+    fullData,
+    mode,
+    currentProvinceCode,
+    onZoomToProvince,
+    onSelectSchool,
+    onSelectDistrict,
+    clearSelection,
+    isSatellite,
+  ])
 
   useEffect(() => {
     if (!selectedSchool) return

@@ -1,28 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 html,
 body {
-  height: 100%;
   margin: 0;
+  min-height: 100%;
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
+  flex: 1 0 auto;
+  min-height: 100vh;
 }
 
 .app {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
+  flex: 1 0 auto;
+  min-height: 100vh;
 }
 
 .app-error {
@@ -43,9 +60,12 @@ body {
 
 .topbar-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 8px 12px;
   letter-spacing: 0.01em;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .topbar-brand {
@@ -55,8 +75,11 @@ body {
 }
 
 .topbar-tagline {
-  font-size: 14px;
+  font-size: clamp(11px, 2.8vw, 14px);
   opacity: 0.95;
+  flex: 1 1 200px;
+  line-height: 1.35;
+  min-width: 0;
 }
 
 .datetime-bar {
@@ -69,10 +92,15 @@ body {
 }
 
 .datetime-inner {
-  max-width: 920px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 4px;
   display: flex;
   justify-content: flex-end;
+  text-align: right;
+  font-size: clamp(10px, 2.6vw, 12px);
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 .topbar-nav {
@@ -103,10 +131,11 @@ body {
 }
 
 .filters-row {
-  max-width: 920px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   gap: 12px;
+  width: 100%;
 }
 
 .filter-group {
@@ -128,6 +157,9 @@ body {
   background: #ffffff;
   font-size: 13px;
   outline: none;
+  width: 100%;
+  max-width: 100%;
+  min-height: 40px;
 }
 
 .filter-group select:focus {
@@ -163,9 +195,11 @@ body {
 /* Layout */
 .layout {
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   width: 100%;
   overflow: hidden;
+  min-height: 320px;
+  height: clamp(320px, 58vh, 720px);
 }
 
 .layout-map-area {
@@ -383,13 +417,14 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 340px;
-  max-width: 100%;
+  width: min(340px, 100%);
+  flex-shrink: 0;
   background: #f8fafc;
   border-left: 1px solid #e2e8f0;
-  padding: 16px;
+  padding: clamp(12px, 3vw, 16px);
   box-sizing: border-box;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sidebar h2 {
@@ -448,27 +483,647 @@ body {
   background: #1e293b;
 }
 
-/* Responsive layout */
+/* Kantipur / Ekantipur news (below map) */
+.kantipur-news {
+  flex: 0 0 auto;
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  padding: clamp(16px, 4vw, 28px) clamp(12px, 4vw, 20px) clamp(24px, 5vw, 40px);
+}
+
+.kantipur-news-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kantipur-news-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.kantipur-news-meta {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.kantipur-news-status {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.kantipur-news-status--error {
+  color: #b91c1c;
+}
+
+.kantipur-news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.kantipur-news-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.kantipur-news-item:last-child {
+  border-bottom: none;
+}
+
+.kantipur-news-item a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1d4ed8;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.kantipur-news-item a:hover {
+  text-decoration: underline;
+}
+
+.kantipur-news-date {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.kantipur-news-footer {
+  margin: 20px 0 0 0;
+  font-size: 14px;
+}
+
+.kantipur-news-footer a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.kantipur-news-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Rautahat district — City Population style dashboard */
+.rautahat-cp {
+  flex: 0 0 auto;
+  background: #f3f4f6;
+  border-top: 1px solid #d1d5db;
+  padding: 24px 16px 40px;
+}
+
+.rautahat-cp__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.rautahat-cp__crumb {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.rautahat-cp__h1 {
+  margin: 0 0 4px 0;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #111827;
+}
+
+.rautahat-cp__subtitle {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.rautahat-cp__hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.rautahat-cp__keystat {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.rautahat-cp__keystat-title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rautahat-cp__keystat-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rautahat-cp__keystat-list div {
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rautahat-cp__keystat-list div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.rautahat-cp__keystat-list dt {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.rautahat-cp__keystat-list dd {
+  margin: 4px 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d4ed8;
+  font-variant-numeric: tabular-nums;
+}
+
+.rautahat-cp__summary-wrap {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  overflow-x: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.rautahat-cp__summary-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.rautahat-cp__summary-table th,
+.rautahat-cp__summary-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.rautahat-cp__summary-table thead th {
+  background: #e5e7eb;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.rautahat-cp__summary-table tbody td {
+  font-variant-numeric: tabular-nums;
+  background: #fff;
+}
+
+.rautahat-cp__source-inline {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #6b7280;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.rautahat-cp__section-title {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rautahat-cp__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.rautahat-cp-card {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 14px 16px 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.rautahat-cp-card--wide {
+  grid-column: 1 / -1;
+}
+
+.rautahat-cp-card__title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rautahat-cp-card__body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.rautahat-cp-card__body--stack {
+  flex-direction: column;
+}
+
+.rautahat-cp-card__chart {
+  flex-shrink: 0;
+}
+
+.rautahat-cp-card__side {
+  flex: 1;
+  min-width: 0;
+}
+
+.rautahat-pie {
+  display: block;
+}
+
+.rautahat-cp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.rautahat-cp-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.rautahat-cp-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rautahat-cp-table__label {
+  color: #374151;
+}
+
+.rautahat-cp-table__num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.rautahat-cp-table__pct {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #6b7280;
+  width: 48px;
+}
+
+.rautahat-cp-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.rautahat-pyramid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.rautahat-pyramid__row {
+  display: grid;
+  grid-template-columns: 88px 1fr 72px 44px;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.rautahat-pyramid__label {
+  color: #4b5563;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.rautahat-pyramid__bar-wrap {
+  height: 16px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.rautahat-pyramid__bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  border-radius: 2px;
+  min-width: 2px;
+  transition: width 0.2s ease;
+}
+
+.rautahat-pyramid__count {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #111827;
+  text-align: right;
+}
+
+.rautahat-pyramid__pct {
+  font-variant-numeric: tabular-nums;
+  color: #6b7280;
+  text-align: right;
+}
+
+.rautahat-cp__footer-source {
+  margin: 24px 0 0 0;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.rautahat-cp__footer-source a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rautahat-cp__footer-source a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .rautahat-cp__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .rautahat-cp__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .rautahat-cp-card__body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rautahat-cp-card__side {
+    width: 100%;
+  }
+
+  .rautahat-pyramid__row {
+    grid-template-columns: 72px 1fr 64px 40px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rautahat-cp {
+    padding: 16px 10px 28px;
+  }
+
+  .rautahat-cp__summary-table {
+    font-size: 11px;
+    min-width: 520px;
+  }
+
+  .rautahat-cp__summary-table th,
+  .rautahat-cp__summary-table td {
+    padding: 8px;
+  }
+
+  .rautahat-pyramid__row {
+    grid-template-columns: 0.85fr 1fr;
+    grid-template-rows: auto auto;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .rautahat-pyramid__label {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .rautahat-pyramid__bar-wrap {
+    grid-column: 1 / -1;
+  }
+
+  .rautahat-pyramid__count {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .rautahat-pyramid__pct {
+    grid-column: 2;
+    text-align: right;
+  }
+}
+
+/* ——— Responsive: tablet ——— */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: min(300px, 38vw);
+  }
+
+  .layout {
+    min-height: 300px;
+    height: clamp(300px, 52vh, 680px);
+  }
+
+  .province-candidates-box {
+    width: min(280px, calc(100vw - 24px));
+    max-height: 38vh;
+  }
+}
+
+/* ——— Responsive: mobile ——— */
 @media (max-width: 768px) {
+  .datetime-bar {
+    padding: 8px 12px;
+  }
+
+  .datetime-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .topbar {
+    padding: 10px 12px;
+  }
+
+  .topbar-inner {
+    gap: 8px;
+  }
+
+  .topbar-tagline {
+    flex: 1 1 100%;
+    order: 3;
+    text-align: center;
+  }
+
+  .topbar-brand {
+    order: 1;
+  }
+
+  .topbar-nav {
+    order: 2;
+    margin-left: auto;
+    width: auto;
+  }
+
+  .filters-bar {
+    padding: 10px 12px 8px;
+  }
+
   .filters-row {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-group {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .layout {
     flex-direction: column;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
   }
 
   .layout-map-area {
     order: 1;
+    flex: 0 0 auto;
+    height: min(52vh, 420px);
+    min-height: 280px;
+    max-height: 480px;
+    width: 100%;
+  }
+
+  .map-wrapper {
+    min-height: 0;
+  }
+
+  .map-container {
     min-height: 260px;
   }
 
   .sidebar {
     order: 2;
     width: 100%;
+    max-width: none;
     border-left: none;
     border-top: 1px solid #e2e8f0;
-    max-height: 320px;
+    max-height: none;
+    overflow-y: visible;
+    flex: 0 0 auto;
+  }
+
+  .reset-view-btn {
+    font-size: 11px;
+    padding: 7px 10px;
+    max-width: calc(100% - 100px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .satellite-toggle-btn {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+
+  .province-candidates-box {
+    width: min(300px, calc(100vw - 24px));
+    right: 12px;
+    left: auto;
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .kantipur-news-header h2 {
+    font-size: clamp(1.1rem, 5vw, 1.35rem);
+  }
+
+  .kantipur-news-item {
+    padding: 12px 14px;
+  }
+
+  .study-page {
+    padding: 16px 14px 24px;
+  }
+
+  .study-page__content {
+    max-width: none;
+  }
+
+  .study-page__candidate {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .study-page__candidate-img {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar-nav {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .topbar-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 12px;
+  }
+
+  .layout-map-area {
+    height: 45vh;
+    min-height: 240px;
+    max-height: 400px;
+  }
+
+  .sidebar h2 {
+    font-size: clamp(17px, 5vw, 20px);
+  }
+
+  .sidebar .sidebar-school-name {
+    font-size: clamp(16px, 4.5vw, 18px);
+  }
+
+  .sidebar .sidebar-know-more-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
 }
 
@@ -1011,15 +1666,34 @@ body {
 
   .school-detail-download-pdf {
     width: 100%;
+    min-height: 48px;
+  }
+
+  .school-detail-back {
+    text-align: center;
+    padding: 10px 0;
   }
 
   .school-report-content {
-    padding: 18px;
+    padding: 16px 14px;
+    border-radius: 12px;
   }
 
   .school-report-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+  }
+
+  .school-report-mindmap-frame {
+    max-height: min(60vh, 400px);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .school-report-slider-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 44px;
+    min-height: 44px;
   }
 }
 
@@ -1032,5 +1706,31 @@ body {
   .school-report-gallery {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 16px;
+  }
+}
+
+/* Compare modal – small screens */
+@media (max-width: 768px) {
+  .compare-overlay {
+    padding: 12px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    align-items: flex-end;
+  }
+
+  .compare-modal {
+    max-height: min(92vh, 900px);
+    border-radius: 12px 12px 0 0;
+  }
+
+  .compare-header {
+    padding: 12px 16px;
+  }
+
+  .compare-selects {
+    padding: 12px 16px;
+  }
+
+  .compare-table-wrap {
+    padding: 0 12px 16px;
   }
 }

@@ -3,6 +3,8 @@ import { Topbar } from './components/Topbar'
 import { FiltersBar } from './components/FiltersBar'
 import { NepalMap } from './components/NepalMap'
 import { Sidebar } from './components/Sidebar'
+import { KantipurNewsSection } from './components/KantipurNewsSection'
+import { RautahatDistrictPanel } from './components/RautahatDistrictPanel'
 import { fetchGeoJson } from './api/geojson'
 import { buildHierarchy } from './utils/hierarchy'
 import { MAP_PINS } from './data/mapPins'
@@ -71,6 +73,13 @@ function App() {
     setSelectedSchool(label)
   }, [])
 
+  const handleSelectDistrictFromMap = useCallback((name: string) => {
+    setDistrictFilter(name)
+    setSelectedSchool('')
+  }, [])
+
+  const showRautahatStats = districtFilter.trim().toLowerCase() === 'rautahat'
+
   if (error) {
     return (
       <div className="app-error">
@@ -102,10 +111,13 @@ function App() {
             onZoomToProvince={handleZoomToProvince}
             onSelectSchool={handleSelectSchool}
             onResetView={handleResetView}
+            onSelectDistrict={handleSelectDistrictFromMap}
           />
         </div>
         <Sidebar selectedSchool={selectedSchool || null} district={districtFilter || undefined} />
       </div>
+      {showRautahatStats && <RautahatDistrictPanel />}
+      <KantipurNewsSection />
     </div>
   )
 }
