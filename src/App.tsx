@@ -104,7 +104,7 @@ function App() {
             onResetView={handleResetView}
           />
         </div>
-        <Sidebar selectedSchool={selectedSchool || null} />
+        <Sidebar selectedSchool={selectedSchool || null} district={districtFilter || undefined} />
       </div>
     </div>
   )
