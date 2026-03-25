@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { DemographicPieChart, recordToDemographicPieData } from './DemographicPieChart'
 import {
   KOSHI_CHART_COLORS,
   KOSHI_DATA_SOURCE_LABEL,
@@ -12,44 +13,6 @@ import {
   koshiPopulationByCensus,
   koshiProvinceMeta,
 } from '../data/koshiProvinceData'
-
-type Slice = { value: number; color: string }
-
-function PieChart({ slices, size = 160 }: { slices: Slice[]; size?: number }) {
-  const total = slices.reduce((a, s) => a + s.value, 0)
-  if (total <= 0) return null
-
-  const cx = 50
-  const cy = 50
-  const r = 42
-  let angle = -Math.PI / 2
-  const paths = slices.map((slice, i) => {
-    const arc = (slice.value / total) * 2 * Math.PI
-    const start = angle
-    angle += arc
-    const x1 = cx + r * Math.cos(start)
-    const y1 = cy + r * Math.sin(start)
-    const x2 = cx + r * Math.cos(angle)
-    const y2 = cy + r * Math.sin(angle)
-    const largeArc = arc > Math.PI ? 1 : 0
-    const d = `M ${cx},${cy} L ${x1},${y1} A ${r},${r} 0 ${largeArc},1 ${x2},${y2} Z`
-    return <path key={i} d={d} fill={slice.color} stroke="#fff" strokeWidth="0.5" />
-  })
-
-  return (
-    <svg className="rautahat-pie" width={size} height={size} viewBox="0 0 100 100" aria-hidden>
-      {paths}
-    </svg>
-  )
-}
-
-function rowsToSlices(rows: Record<string, number>, colors: string[]): Slice[] {
-  const entries = Object.entries(rows)
-  return entries.map(([, value], i) => ({
-    value,
-    color: colors[i % colors.length],
-  }))
-}
 
 function DataTableWithPct({
   rows,
@@ -155,31 +118,31 @@ export function KoshiProvincePanel() {
     No: KOSHI_CHART_COLORS.orange,
   }
 
-  const genderSlices = rowsToSlices(koshiGender2021 as unknown as Record<string, number>, [
-    KOSHI_CHART_COLORS.blue,
-    KOSHI_CHART_COLORS.orange,
-  ])
-  const ageSlices = rowsToSlices(koshiBroadAge2021 as unknown as Record<string, number>, [
-    KOSHI_CHART_COLORS.blue,
-    KOSHI_CHART_COLORS.green,
-    KOSHI_CHART_COLORS.orange,
-  ])
-  const citSlices = rowsToSlices(koshiCitizenship2021 as unknown as Record<string, number>, [
-    KOSHI_CHART_COLORS.blue,
-    KOSHI_CHART_COLORS.orange,
+  const genderPieData = recordToDemographicPieData(
+    { ...koshiGender2021 },
+    genderColors,
     KOSHI_CHART_COLORS.slate,
-  ])
-  const birthSlices = rowsToSlices(koshiPlaceOfBirth2021 as unknown as Record<string, number>, [
-    KOSHI_CHART_COLORS.blue,
-    KOSHI_CHART_COLORS.green,
-    KOSHI_CHART_COLORS.orange,
-    KOSHI_CHART_COLORS.red,
-  ])
-  const litSlices = rowsToSlices(koshiLiteracyAge5Plus2021 as unknown as Record<string, number>, [
-    KOSHI_CHART_COLORS.green,
-    KOSHI_CHART_COLORS.cyan,
-    KOSHI_CHART_COLORS.orange,
-  ])
+  )
+  const agePieData = recordToDemographicPieData(
+    { ...koshiBroadAge2021 },
+    ageGroupColors,
+    KOSHI_CHART_COLORS.slate,
+  )
+  const citPieData = recordToDemographicPieData(
+    { ...koshiCitizenship2021 },
+    citizenshipColors,
+    KOSHI_CHART_COLORS.slate,
+  )
+  const birthPieData = recordToDemographicPieData(
+    { ...koshiPlaceOfBirth2021 },
+    birthColors,
+    KOSHI_CHART_COLORS.slate,
+  )
+  const litPieData = recordToDemographicPieData(
+    { ...koshiLiteracyAge5Plus2021 },
+    literacyColors,
+    KOSHI_CHART_COLORS.slate,
+  )
 
   return (
     <section className="rautahat-cp" aria-labelledby="koshi-cp-title">
@@ -248,11 +211,11 @@ export function KoshiProvincePanel() {
         <h3 className="rautahat-cp__section-title">Further information about the population structure</h3>
 
         <div className="rautahat-cp__cards">
-          <DemographicCard title="Gender (C 2021)" pie={<PieChart slices={genderSlices} />}>
+          <DemographicCard title="Gender (C 2021)" pie={<DemographicPieChart data={genderPieData} />}>
             <DataTableWithPct rows={{ ...koshiGender2021 }} colors={genderColors} />
           </DemographicCard>
 
-          <DemographicCard title="Age Groups (C 2021)" pie={<PieChart slices={ageSlices} />}>
+          <DemographicCard title="Age Groups (C 2021)" pie={<DemographicPieChart data={agePieData} />}>
             <DataTableWithPct rows={{ ...koshiBroadAge2021 }} colors={ageGroupColors} />
           </DemographicCard>
 
@@ -263,15 +226,15 @@ export function KoshiProvincePanel() {
             </div>
           </article>
 
-          <DemographicCard title="Citizenship (C 2021)" pie={<PieChart slices={citSlices} />}>
+          <DemographicCard title="Citizenship (C 2021)" pie={<DemographicPieChart data={citPieData} />}>
             <DataTableWithPct rows={{ ...koshiCitizenship2021 }} colors={citizenshipColors} />
           </DemographicCard>
 
-          <DemographicCard title="Place of Birth (C 2021)" pie={<PieChart slices={birthSlices} />}>
+          <DemographicCard title="Place of Birth (C 2021)" pie={<DemographicPieChart data={birthPieData} />}>
             <DataTableWithPct rows={{ ...koshiPlaceOfBirth2021 }} colors={birthColors} />
           </DemographicCard>
 
-          <DemographicCard title="Literacy (A5+) (C 2021)" pie={<PieChart slices={litSlices} />}>
+          <DemographicCard title="Literacy (A5+) (C 2021)" pie={<DemographicPieChart data={litPieData} />}>
             <DataTableWithPct rows={{ ...koshiLiteracyAge5Plus2021 }} colors={literacyColors} />
           </DemographicCard>
         </div>

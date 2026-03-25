@@ -23,12 +23,20 @@ export function FiltersBar({
   onSchoolChange,
 }: FiltersBarProps) {
   const provinceCodes = hierarchy ? Object.keys(hierarchy).sort((a, b) => Number(a) - Number(b)) : []
-  const districts = hierarchy && provinceCode ? Object.keys(hierarchy[provinceCode]?.districts ?? {}).sort() : []
+  const districts =
+    hierarchy && provinceCode
+      ? Object.keys(hierarchy[provinceCode]?.districts ?? {}).sort((a, b) =>
+          a.localeCompare(b, 'en', { sensitivity: 'base' })
+        )
+      : []
   const schoolsInDistrict =
     district && schools.length
       ? schools.filter((s) => (s.district ?? '').toLowerCase() === district.toLowerCase())
       : []
-  const schoolList = district && schoolsInDistrict.length > 0 ? schoolsInDistrict : schools
+  const schoolListRaw = district && schoolsInDistrict.length > 0 ? schoolsInDistrict : schools
+  const schoolList = [...schoolListRaw].sort((a, b) =>
+    a.label.localeCompare(b.label, 'en', { sensitivity: 'base' })
+  )
 
   return (
     <div className="filters-bar">

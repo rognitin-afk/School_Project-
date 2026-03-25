@@ -1,0 +1,131 @@
+[
+  {
+    "district": "Rautahat",
+    "source": "NPHC 2021",
+    "data": [
+      {
+        "caste": "All Castes",
+        "total": 813573,
+        "male": 408403,
+        "female": 405170
+      },
+      { "caste": "Musalman", "total": 182206, "male": 87591, "female": 94615 },
+      { "caste": "Yadav", "total": 102800, "male": 53136, "female": 49664 },
+      { "caste": "Kurmi", "total": 48192, "male": 24651, "female": 23541 },
+      { "caste": "Teli", "total": 47085, "male": 24263, "female": 22822 },
+      { "caste": "Kanu", "total": 38500, "male": 19772, "female": 18728 },
+      {
+        "caste": "Chamar/Harijan/Ram",
+        "total": 33593,
+        "male": 17072,
+        "female": 16521
+      },
+      { "caste": "Tharu", "total": 33066, "male": 16151, "female": 16915 },
+      { "caste": "Mallaha", "total": 24680, "male": 12611, "female": 12069 },
+      {
+        "caste": "Dusadh/Pasawan/Pasi",
+        "total": 24327,
+        "male": 12267,
+        "female": 12060
+      },
+      { "caste": "Kalwar", "total": 23595, "male": 12328, "female": 11267 },
+      {
+        "caste": "Tatma/Tatwa",
+        "total": 21367,
+        "male": 10796,
+        "female": 10571
+      },
+      {
+        "caste": "Koiri/Kushwaha",
+        "total": 20561,
+        "male": 10600,
+        "female": 9961
+      },
+      { "caste": "Dhobi", "total": 16662, "male": 8386, "female": 8276 },
+      { "caste": "Kumhar", "total": 15687, "male": 7987, "female": 7700 },
+      { "caste": "Lohar", "total": 15232, "male": 7836, "female": 7396 },
+      { "caste": "Nuniya", "total": 13448, "male": 6926, "female": 6522 },
+      {
+        "caste": "Brahman - Tarai",
+        "total": 13019,
+        "male": 6708,
+        "female": 6311
+      },
+      { "caste": "Bin", "total": 12742, "male": 6427, "female": 6315 },
+      { "caste": "Tamang", "total": 11974, "male": 5820, "female": 6154 },
+      { "caste": "Hajam/Thakur", "total": 10977, "male": 5554, "female": 5423 },
+      {
+        "caste": "Brahman - Hill",
+        "total": 10073,
+        "male": 4914,
+        "female": 5159
+      },
+      { "caste": "Sonar", "total": 8795, "male": 4554, "female": 4241 },
+      { "caste": "Kshetri", "total": 8019, "male": 3868, "female": 4151 },
+      { "caste": "Musahar", "total": 7470, "male": 3752, "female": 3718 },
+      { "caste": "Baniyan", "total": 5673, "male": 2970, "female": 2703 },
+      { "caste": "Majhi", "total": 5359, "male": 2637, "female": 2722 },
+      { "caste": "Rajput", "total": 5172, "male": 2661, "female": 2511 },
+      { "caste": "Magar", "total": 4925, "male": 2302, "female": 2623 },
+      { "caste": "Kathabaniyan", "total": 4534, "male": 2326, "female": 2208 },
+      { "caste": "Baraee", "total": 4381, "male": 2250, "female": 2131 },
+      {
+        "caste": "Sanyasi/Dasnami",
+        "total": 3895,
+        "male": 1997,
+        "female": 1898
+      },
+      { "caste": "Kahar", "total": 3352, "male": 1685, "female": 1667 },
+      { "caste": "Sundi", "total": 3155, "male": 1646, "female": 1509 },
+      { "caste": "Mali", "total": 2665, "male": 1366, "female": 1299 },
+      { "caste": "Rauniyar", "total": 2650, "male": 1391, "female": 1259 },
+
+      { "caste": "Bishwokarma", "total": 2417, "male": 1205, "female": 1212 },
+      { "caste": "Rai", "total": 2373, "male": 1161, "female": 1212 },
+      { "caste": "Dhanuk", "total": 2147, "male": 1095, "female": 1052 },
+      { "caste": "Newar", "total": 2063, "male": 1010, "female": 1053 },
+      { "caste": "Kayastha", "total": 1861, "male": 949, "female": 912 },
+      { "caste": "Gaderi/Bhediyar", "total": 1821, "male": 940, "female": 881 },
+      { "caste": "Bhumihar", "total": 1127, "male": 584, "female": 543 },
+      { "caste": "Danuwar", "total": 1126, "male": 568, "female": 558 },
+      { "caste": "Dom", "total": 1109, "male": 577, "female": 532 },
+      { "caste": "Pariyar", "total": 666, "male": 307, "female": 359 },
+      { "caste": "Thakuri", "total": 507, "male": 248, "female": 259 },
+      { "caste": "Badhaee/Badhee", "total": 473, "male": 242, "female": 231 },
+      { "caste": "Gharti/Bhujel", "total": 436, "male": 215, "female": 221 },
+      { "caste": "Gurung", "total": 402, "male": 194, "female": 208 },
+      { "caste": "Pahari", "total": 398, "male": 193, "female": 205 },
+      { "caste": "Kumal", "total": 309, "male": 146, "female": 163 },
+      { "caste": "Kewat", "total": 295, "male": 134, "female": 161 },
+      { "caste": "Dhunia", "total": 283, "male": 133, "female": 150 },
+      { "caste": "Halkhor", "total": 249, "male": 133, "female": 116 },
+      { "caste": "Marwadi", "total": 237, "male": 124, "female": 113 },
+      { "caste": "Haluwai", "total": 225, "male": 115, "female": 110 },
+      { "caste": "Rajbansi", "total": 198, "male": 101, "female": 97 },
+      { "caste": "Mijar", "total": 152, "male": 69, "female": 83 },
+      { "caste": "Dhankar/Dharikar", "total": 137, "male": 73, "female": 64 },
+      { "caste": "Natuwa", "total": 108, "male": 57, "female": 51 },
+      { "caste": "Khatwe", "total": 97, "male": 49, "female": 48 },
+      { "caste": "Sunuwar", "total": 87, "male": 45, "female": 42 },
+      {
+        "caste": "Patharkatt/Kushwadiya",
+        "total": 43,
+        "male": 27,
+        "female": 16
+      },
+      { "caste": "Dhimal", "total": 42, "male": 22, "female": 20 },
+      { "caste": "Kalar", "total": 35, "male": 20, "female": 15 },
+      { "caste": "Sherpa", "total": 34, "male": 22, "female": 12 },
+      { "caste": "Yakthung/Limbu", "total": 24, "male": 12, "female": 12 },
+      { "caste": "Thami", "total": 20, "male": 9, "female": 11 },
+      { "caste": "Badi", "total": 18, "male": 10, "female": 8 },
+      { "caste": "Chepang/Praja", "total": 18, "male": 9, "female": 9 },
+      { "caste": "Khawas", "total": 14, "male": 7, "female": 7 },
+      { "caste": "Amat", "total": 10, "male": 6, "female": 4 },
+
+      { "caste": "Foreigner", "total": 2039, "male": 319, "female": 1720 },
+      { "caste": "Others", "total": 125, "male": 65, "female": 60 },
+      { "caste": "Not stated", "total": 17, "male": 7, "female": 10 }
+    ]
+  }
+]

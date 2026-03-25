@@ -3,7 +3,6 @@ import { Topbar } from './components/Topbar'
 import { FiltersBar } from './components/FiltersBar'
 import { NepalMap } from './components/NepalMap'
 import { Sidebar } from './components/Sidebar'
-import { KantipurNewsSection } from './components/KantipurNewsSection'
 import { RautahatDistrictPanel } from './components/RautahatDistrictPanel'
 import { MadheshProvincePanel } from './components/MadheshProvincePanel'
 import { BagmatiProvincePanel } from './components/BagmatiProvincePanel'
@@ -13,6 +12,9 @@ import { GandakiProvincePanel } from './components/GandakiProvincePanel'
 import { KarnaliProvincePanel } from './components/KarnaliProvincePanel'
 import { SudurpashchimProvincePanel } from './components/SudurpashchimProvincePanel'
 import { SarlahiDistrictPanel } from './components/SarlahiDistrictPanel'
+import { DistrictCasteEthnicityPanel } from './components/DistrictCasteEthnicityPanel'
+import { NepalNationalDemographicsPanel } from './components/NepalNationalDemographicsPanel'
+import { ProvinceContextDemographicsPanel } from './components/ProvinceContextDemographicsPanel'
 import { fetchGeoJson } from './api/geojson'
 import { buildHierarchy } from './utils/hierarchy'
 import { MAP_PINS } from './data/mapPins'
@@ -142,7 +144,22 @@ function App() {
       {showSudurpashchimStats && <SudurpashchimProvincePanel />}
       {showSarlahiStats && <SarlahiDistrictPanel />}
       {showRautahatStats && <RautahatDistrictPanel />}
-      <KantipurNewsSection />
+      {!provinceFilter && <NepalNationalDemographicsPanel />}
+      {provinceFilter &&
+        districtFilter.trim() !== '' &&
+        !showRautahatStats &&
+        !showSarlahiStats && <ProvinceContextDemographicsPanel provinceCode={provinceFilter} />}
+      {districtFilter.trim() !== '' ? (
+        <DistrictCasteEthnicityPanel scope="district" mapDistrictLabel={districtFilter} />
+      ) : provinceFilter ? (
+        <DistrictCasteEthnicityPanel
+          scope="province"
+          provinceCode={provinceFilter}
+          hierarchy={hierarchy}
+        />
+      ) : (
+        <DistrictCasteEthnicityPanel scope="national" />
+      )}
     </div>
   )
 }

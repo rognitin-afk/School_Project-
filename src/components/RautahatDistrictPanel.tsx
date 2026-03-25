@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { DemographicPieChart, recordToDemographicPieData } from './DemographicPieChart'
 import {
   RAUTAHAT_CHART_COLORS,
   RAUTAHAT_DATA_SOURCE_LABEL,
@@ -13,50 +14,6 @@ import {
   rautahatPlaceOfBirth2021,
   rautahatPopulationByCensus,
 } from '../data/rautahatDistrictData'
-
-type Slice = { value: number; color: string }
-
-function PieChart({ slices, size = 160 }: { slices: Slice[]; size?: number }) {
-  const total = slices.reduce((a, s) => a + s.value, 0)
-  if (total <= 0) return null
-
-  const cx = 50
-  const cy = 50
-  const r = 42
-  let angle = -Math.PI / 2
-  const paths = slices.map((slice, i) => {
-    const arc = (slice.value / total) * 2 * Math.PI
-    const start = angle
-    angle += arc
-    const x1 = cx + r * Math.cos(start)
-    const y1 = cy + r * Math.sin(start)
-    const x2 = cx + r * Math.cos(angle)
-    const y2 = cy + r * Math.sin(angle)
-    const largeArc = arc > Math.PI ? 1 : 0
-    const d = `M ${cx},${cy} L ${x1},${y1} A ${r},${r} 0 ${largeArc},1 ${x2},${y2} Z`
-    return <path key={i} d={d} fill={slice.color} stroke="#fff" strokeWidth="0.5" />
-  })
-
-  return (
-    <svg
-      className="rautahat-pie"
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      aria-hidden
-    >
-      {paths}
-    </svg>
-  )
-}
-
-function rowsToSlices(rows: Record<string, number>, colors: string[]): Slice[] {
-  const entries = Object.entries(rows)
-  return entries.map(([, value], i) => ({
-    value,
-    color: colors[i % colors.length],
-  }))
-}
 
 function DataTableWithPct({
   rows,
@@ -165,31 +122,31 @@ export function RautahatDistrictPanel() {
     No: RAUTAHAT_CHART_COLORS.orange,
   }
 
-  const genderSlices = rowsToSlices(rautahatGender2021 as unknown as Record<string, number>, [
-    RAUTAHAT_CHART_COLORS.blue,
-    RAUTAHAT_CHART_COLORS.orange,
-  ])
-  const ageSlices = rowsToSlices(rautahatBroadAge2021 as unknown as Record<string, number>, [
-    RAUTAHAT_CHART_COLORS.blue,
-    RAUTAHAT_CHART_COLORS.green,
-    RAUTAHAT_CHART_COLORS.orange,
-  ])
-  const citSlices = rowsToSlices(rautahatCitizenship2021 as unknown as Record<string, number>, [
-    RAUTAHAT_CHART_COLORS.blue,
-    RAUTAHAT_CHART_COLORS.orange,
+  const genderPieData = recordToDemographicPieData(
+    { ...rautahatGender2021 },
+    genderColors,
     RAUTAHAT_CHART_COLORS.slate,
-  ])
-  const birthSlices = rowsToSlices(rautahatPlaceOfBirth2021 as unknown as Record<string, number>, [
-    RAUTAHAT_CHART_COLORS.blue,
-    RAUTAHAT_CHART_COLORS.green,
-    RAUTAHAT_CHART_COLORS.orange,
-    RAUTAHAT_CHART_COLORS.red,
-  ])
-  const litSlices = rowsToSlices(rautahatLiteracyAge5Plus2021 as unknown as Record<string, number>, [
-    RAUTAHAT_CHART_COLORS.green,
-    RAUTAHAT_CHART_COLORS.cyan,
-    RAUTAHAT_CHART_COLORS.orange,
-  ])
+  )
+  const agePieData = recordToDemographicPieData(
+    { ...rautahatBroadAge2021 },
+    ageGroupColors,
+    RAUTAHAT_CHART_COLORS.slate,
+  )
+  const citPieData = recordToDemographicPieData(
+    { ...rautahatCitizenship2021 },
+    citizenshipColors,
+    RAUTAHAT_CHART_COLORS.slate,
+  )
+  const birthPieData = recordToDemographicPieData(
+    { ...rautahatPlaceOfBirth2021 },
+    birthColors,
+    RAUTAHAT_CHART_COLORS.slate,
+  )
+  const litPieData = recordToDemographicPieData(
+    { ...rautahatLiteracyAge5Plus2021 },
+    literacyColors,
+    RAUTAHAT_CHART_COLORS.slate,
+  )
 
   return (
     <section className="rautahat-cp" aria-labelledby="rautahat-cp-title">
@@ -272,14 +229,14 @@ export function RautahatDistrictPanel() {
         <div className="rautahat-cp__cards">
           <DemographicCard
             title="Gender (C 2021)"
-            pie={<PieChart slices={genderSlices} />}
+            pie={<DemographicPieChart data={genderPieData} />}
           >
             <DataTableWithPct rows={{ ...rautahatGender2021 }} colors={genderColors} />
           </DemographicCard>
 
           <DemographicCard
             title="Age Groups (C 2021)"
-            pie={<PieChart slices={ageSlices} />}
+            pie={<DemographicPieChart data={agePieData} />}
           >
             <DataTableWithPct rows={{ ...rautahatBroadAge2021 }} colors={ageGroupColors} />
           </DemographicCard>
@@ -293,21 +250,21 @@ export function RautahatDistrictPanel() {
 
           <DemographicCard
             title="Citizenship (C 2021)"
-            pie={<PieChart slices={citSlices} />}
+            pie={<DemographicPieChart data={citPieData} />}
           >
             <DataTableWithPct rows={{ ...rautahatCitizenship2021 }} colors={citizenshipColors} />
           </DemographicCard>
 
           <DemographicCard
             title="Place of Birth (C 2021)"
-            pie={<PieChart slices={birthSlices} />}
+            pie={<DemographicPieChart data={birthPieData} />}
           >
             <DataTableWithPct rows={{ ...rautahatPlaceOfBirth2021 }} colors={birthColors} />
           </DemographicCard>
 
           <DemographicCard
             title="Literacy (A5+) (C 2021)"
-            pie={<PieChart slices={litSlices} />}
+            pie={<DemographicPieChart data={litPieData} />}
           >
             <DataTableWithPct rows={{ ...rautahatLiteracyAge5Plus2021 }} colors={literacyColors} />
           </DemographicCard>

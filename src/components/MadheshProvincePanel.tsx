@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { DemographicPieChart, recordToDemographicPieData } from './DemographicPieChart'
 import {
   MADHESH_CHART_COLORS,
   MADHESH_DATA_SOURCE_LABEL,
@@ -13,44 +14,6 @@ import {
   madheshPopulationByCensus,
   madheshProvinceMeta,
 } from '../data/madheshProvinceData'
-
-type Slice = { value: number; color: string }
-
-function PieChart({ slices, size = 160 }: { slices: Slice[]; size?: number }) {
-  const total = slices.reduce((a, s) => a + s.value, 0)
-  if (total <= 0) return null
-
-  const cx = 50
-  const cy = 50
-  const r = 42
-  let angle = -Math.PI / 2
-  const paths = slices.map((slice, i) => {
-    const arc = (slice.value / total) * 2 * Math.PI
-    const start = angle
-    angle += arc
-    const x1 = cx + r * Math.cos(start)
-    const y1 = cy + r * Math.sin(start)
-    const x2 = cx + r * Math.cos(angle)
-    const y2 = cy + r * Math.sin(angle)
-    const largeArc = arc > Math.PI ? 1 : 0
-    const d = `M ${cx},${cy} L ${x1},${y1} A ${r},${r} 0 ${largeArc},1 ${x2},${y2} Z`
-    return <path key={i} d={d} fill={slice.color} stroke="#fff" strokeWidth="0.5" />
-  })
-
-  return (
-    <svg className="rautahat-pie" width={size} height={size} viewBox="0 0 100 100" aria-hidden>
-      {paths}
-    </svg>
-  )
-}
-
-function rowsToSlices(rows: Record<string, number>, colors: string[]): Slice[] {
-  const entries = Object.entries(rows)
-  return entries.map(([, value], i) => ({
-    value,
-    color: colors[i % colors.length],
-  }))
-}
 
 function DataTableWithPct({
   rows,
@@ -156,31 +119,31 @@ export function MadheshProvincePanel() {
     No: MADHESH_CHART_COLORS.orange,
   }
 
-  const genderSlices = rowsToSlices(madheshGender2021 as unknown as Record<string, number>, [
-    MADHESH_CHART_COLORS.blue,
-    MADHESH_CHART_COLORS.orange,
-  ])
-  const ageSlices = rowsToSlices(madheshBroadAge2021 as unknown as Record<string, number>, [
-    MADHESH_CHART_COLORS.blue,
-    MADHESH_CHART_COLORS.green,
-    MADHESH_CHART_COLORS.orange,
-  ])
-  const citSlices = rowsToSlices(madheshCitizenship2021 as unknown as Record<string, number>, [
-    MADHESH_CHART_COLORS.blue,
-    MADHESH_CHART_COLORS.orange,
+  const genderPieData = recordToDemographicPieData(
+    { ...madheshGender2021 },
+    genderColors,
     MADHESH_CHART_COLORS.slate,
-  ])
-  const birthSlices = rowsToSlices(madheshPlaceOfBirth2021 as unknown as Record<string, number>, [
-    MADHESH_CHART_COLORS.blue,
-    MADHESH_CHART_COLORS.green,
-    MADHESH_CHART_COLORS.orange,
-    MADHESH_CHART_COLORS.red,
-  ])
-  const litSlices = rowsToSlices(madheshLiteracyAge5Plus2021 as unknown as Record<string, number>, [
-    MADHESH_CHART_COLORS.green,
-    MADHESH_CHART_COLORS.cyan,
-    MADHESH_CHART_COLORS.orange,
-  ])
+  )
+  const agePieData = recordToDemographicPieData(
+    { ...madheshBroadAge2021 },
+    ageGroupColors,
+    MADHESH_CHART_COLORS.slate,
+  )
+  const citPieData = recordToDemographicPieData(
+    { ...madheshCitizenship2021 },
+    citizenshipColors,
+    MADHESH_CHART_COLORS.slate,
+  )
+  const birthPieData = recordToDemographicPieData(
+    { ...madheshPlaceOfBirth2021 },
+    birthColors,
+    MADHESH_CHART_COLORS.slate,
+  )
+  const litPieData = recordToDemographicPieData(
+    { ...madheshLiteracyAge5Plus2021 },
+    literacyColors,
+    MADHESH_CHART_COLORS.slate,
+  )
 
   return (
     <section className="rautahat-cp" aria-labelledby="madhesh-cp-title">
@@ -257,11 +220,11 @@ export function MadheshProvincePanel() {
         <h3 className="rautahat-cp__section-title">Further information about the population structure</h3>
 
         <div className="rautahat-cp__cards">
-          <DemographicCard title="Gender (C 2021)" pie={<PieChart slices={genderSlices} />}>
+          <DemographicCard title="Gender (C 2021)" pie={<DemographicPieChart data={genderPieData} />}>
             <DataTableWithPct rows={{ ...madheshGender2021 }} colors={genderColors} />
           </DemographicCard>
 
-          <DemographicCard title="Age Groups (C 2021)" pie={<PieChart slices={ageSlices} />}>
+          <DemographicCard title="Age Groups (C 2021)" pie={<DemographicPieChart data={agePieData} />}>
             <DataTableWithPct rows={{ ...madheshBroadAge2021 }} colors={ageGroupColors} />
           </DemographicCard>
 
@@ -272,15 +235,15 @@ export function MadheshProvincePanel() {
             </div>
           </article>
 
-          <DemographicCard title="Citizenship (C 2021)" pie={<PieChart slices={citSlices} />}>
+          <DemographicCard title="Citizenship (C 2021)" pie={<DemographicPieChart data={citPieData} />}>
             <DataTableWithPct rows={{ ...madheshCitizenship2021 }} colors={citizenshipColors} />
           </DemographicCard>
 
-          <DemographicCard title="Place of Birth (C 2021)" pie={<PieChart slices={birthSlices} />}>
+          <DemographicCard title="Place of Birth (C 2021)" pie={<DemographicPieChart data={birthPieData} />}>
             <DataTableWithPct rows={{ ...madheshPlaceOfBirth2021 }} colors={birthColors} />
           </DemographicCard>
 
-          <DemographicCard title="Literacy (A5+) (C 2021)" pie={<PieChart slices={litSlices} />}>
+          <DemographicCard title="Literacy (A5+) (C 2021)" pie={<DemographicPieChart data={litPieData} />}>
             <DataTableWithPct rows={{ ...madheshLiteracyAge5Plus2021 }} colors={literacyColors} />
           </DemographicCard>
         </div>
