@@ -5,6 +5,14 @@ import { NepalMap } from './components/NepalMap'
 import { Sidebar } from './components/Sidebar'
 import { KantipurNewsSection } from './components/KantipurNewsSection'
 import { RautahatDistrictPanel } from './components/RautahatDistrictPanel'
+import { MadheshProvincePanel } from './components/MadheshProvincePanel'
+import { BagmatiProvincePanel } from './components/BagmatiProvincePanel'
+import { LumbiniProvincePanel } from './components/LumbiniProvincePanel'
+import { KoshiProvincePanel } from './components/KoshiProvincePanel'
+import { GandakiProvincePanel } from './components/GandakiProvincePanel'
+import { KarnaliProvincePanel } from './components/KarnaliProvincePanel'
+import { SudurpashchimProvincePanel } from './components/SudurpashchimProvincePanel'
+import { SarlahiDistrictPanel } from './components/SarlahiDistrictPanel'
 import { fetchGeoJson } from './api/geojson'
 import { buildHierarchy } from './utils/hierarchy'
 import { MAP_PINS } from './data/mapPins'
@@ -79,6 +87,15 @@ function App() {
   }, [])
 
   const showRautahatStats = districtFilter.trim().toLowerCase() === 'rautahat'
+  const showSarlahiStats = districtFilter.trim().toLowerCase() === 'sarlahi'
+  const showAnyMadheshDistrictStats = showRautahatStats || showSarlahiStats
+  const showMadheshStats = provinceFilter === '2' && !showAnyMadheshDistrictStats
+  const showBagmatiStats = provinceFilter === '3'
+  const showLumbiniStats = provinceFilter === '5'
+  const showKoshiStats = provinceFilter === '1'
+  const showGandakiStats = provinceFilter === '4'
+  const showKarnaliStats = provinceFilter === '6'
+  const showSudurpashchimStats = provinceFilter === '7'
 
   if (error) {
     return (
@@ -116,6 +133,14 @@ function App() {
         </div>
         <Sidebar selectedSchool={selectedSchool || null} district={districtFilter || undefined} />
       </div>
+      {showKoshiStats && <KoshiProvincePanel />}
+      {showMadheshStats && <MadheshProvincePanel />}
+      {showBagmatiStats && <BagmatiProvincePanel />}
+      {showGandakiStats && <GandakiProvincePanel />}
+      {showLumbiniStats && <LumbiniProvincePanel />}
+      {showKarnaliStats && <KarnaliProvincePanel />}
+      {showSudurpashchimStats && <SudurpashchimProvincePanel />}
+      {showSarlahiStats && <SarlahiDistrictPanel />}
       {showRautahatStats && <RautahatDistrictPanel />}
       <KantipurNewsSection />
     </div>
