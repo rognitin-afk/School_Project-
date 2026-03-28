@@ -1,19 +1,33 @@
-Here are some ideas that would fit really well with your app:
-Map & data features
-Election results overlay: Show past election winners/party colors per constituency (toggle on/off), so users can see strongholds and swing areas.
-Turnout heatmap: Shade constituencies by voter turnout percentage or population to show engagement/intensity.
-Compare candidates: Let users pick 2 candidates (same or different constituencies) and compare age, education, party, past wins, key promises.
-Candidate details
-Richer profiles: Add education, profession, previous positions, social links, key issues, and notable achievements.
-Promises vs performance: Tag each candidate’s main promises and later mark them as “in progress / done / not started”.
-Party view: Filter by party and highlight only that party’s candidates on the map.
-Filters & search
-Advanced filters: By age range, gender, party, incumbency (new vs sitting MP), urban/rural district.
-Smart search bar: Single search box that accepts candidate name, district, constituency code, or party and jumps directly there.
-Bookmarks / favorites: Let users “star” constituencies or candidates to quickly revisit them.
-UX & content
-Timeline mode: If you later add historical data, a slider to move across years and see how maps/candidates changed.
-Multilingual support: English/Nepali toggle (names, labels, UI).
-Election guide content: Plain-language explanations of what each body (House of Representatives, provinces) actually does, and how constituencies are formed.
-Shareable deep links: URL updates when a specific province/constituency/candidate is selected so users can share that exact view.
-If you tell me which 1–2 of these excite you the most, I can help you design them step-by-step (still without code at first, if you want).
+Complete Social Group Breakdown — Madhesh Province (Total Pop: 61,14,600)
+
+🔴 ALL DALITS
+Madhesi Dalit
+CastePopulation%Chamar/Harijan/Ram2,69,3964.41%Musahar1,79,1532.93%Dusadh/Pasawan/Pasi1,76,1902.88%Tatma/Tatwa1,17,5071.92%Khatwe1,12,5211.84%Dhobi62,5771.02%Badhaee/Badhee30,2110.49%Dom14,0600.23%Bantar/Sardar21,6860.35%Rajdhob13,6740.22%Halkhor2,6580.04%Badi2190.00%Subtotal9,99,85216.35%
+Hill Dalit
+CastePopulation%Bishwokarma28,3440.46%Pariyar9,6770.16%Mijar5,9710.10%Subtotal43,9920.72%
+🔴 Total All Dalits: 10,43,844 | 17.07%
+
+🟢 MUSLIM
+CastePopulation%Musalman7,92,77612.97%Total7,92,77612.97%
+
+🟠 MADHESI OBC
+CastePopulation%Yadav9,26,50815.15%Teli3,24,7055.31%Koiri/Kushwaha2,76,1554.52%Dhanuk2,17,0963.55%Kurmi1,80,5812.95%Mallaha1,41,6382.32%Kanu1,39,0882.27%Kalwar1,01,8601.67%Kewat92,3461.51%Sundi89,8961.47%Bin89,4821.46%Hajam/Thakur88,8041.45%Nuniya72,9761.19%Kumhar72,4541.18%Lohar66,6261.09%Sonar62,1831.02%Baraee47,0990.77%Haluwai45,4440.74%Danuwar33,1250.54%Kathabaniyan33,0290.54%Amat31,9990.52%Rauniyar20,4310.33%Baniyan16,9910.28%Gaderi/Bhediyar16,7140.27%Mali13,9740.23%Kahar12,0150.20%Dhunia7,6980.13%Gondh/Gond7,8370.13%Oraon/Kudukh6,9530.11%Rajbhar4,6890.08%Chai/Khulaut4,6510.08%Natuwa1,9850.03%Sarbaria1,1420.02%Kori1,1020.02%Kalar5550.01%Beldar2,2730.04%Khawas2320.00%Kamar2970.00%Patharkatt/Kushwadiya2390.00%Lodh760.00%Total22,52,69336.84%
+
+🔵 MADHESI UPPER CASTE
+CastePopulation%Brahman - Tarai1,01,0931.65%Rajput33,4550.55%Kayastha21,1090.35%Bhumihar30,7690.50%Total1,86,4263.05%
+
+🟤 HILL UPPER CASTE (Khas Arya)
+CastePopulation%Kshetri98,0021.60%Brahman - Hill80,3871.31%Sanyasi/Dasnami19,7140.32%Thakuri10,0060.16%Total2,08,1093.39%
+
+🟣 JANAJATI
+Tarai Janajati
+CastePopulation%Tharu3,01,0384.92%Majhi29,5990.48%Dhankar/Dharikar2,0890.03%Rajbansi1,0160.02%Bote5380.01%Gangai500.00%Tajpuriya260.00%Meche650.00%Ranatharu1580.00%Santhal1450.00%Subtotal3,34,7245.47%
+Hill Janajati
+CastePopulation%Tamang1,22,1942.00%Magar65,1421.07%Newar37,3560.61%Rai10,2100.17%Gharti/Bhujel6,6850.11%Kumal5,4860.09%Gurung3,0490.05%Sunuwar2,6610.04%Dev2,9950.05%Thami5370.01%Yakthung/Limbu5280.01%Ghale3680.01%Chepang/Praja3620.01%Sherpa2430.00%Hayu2250.00%Aathpahariya1130.00%Dhimal1050.00%Yakkha900.00%Darai720.00%Bhote720.00%Gaine670.00%Thakali620.00%Byasi/Sauka480.00%Yamphu460.00%Bahing390.00%Baram/Baramu370.00%Chamling360.00%Thulung230.00%Loharung230.00%Munda200.00%Jirel180.00%Chhantyal/Chhantel180.00%Chidimar180.00%Chumba/Nubri170.00%Lhopa130.00%Dura110.00%Karmarong110.00%Lhomi110.00%Subtotal2,57,9454.22%
+🟣 Total Janajati: 5,92,669 | 9.69%
+
+⚪ OTHERS
+Population%Foreigner27,4240.45%Marwadi7,4080.12%Pahari8030.01%Bangali5420.01%Punjabi/Sikh1220.00%Others1190.00%Not stated3440.01%Total36,7620.60%
+
+📋 Final Summary — Madhesh Province
+GroupPopulation%🔴 All Dalits10,43,84417.07%🟢 Muslim7,92,77612.97%🟠 Madhesi OBC22,52,69336.84%🔵 Madhesi Upper Caste1,86,4263.05%🟤 Hill Upper Caste2,08,1093.39%🟣 Janajati5,92,6699.69%⚪ Others36,7620.60%Total61,13,279~100%

@@ -781,6 +781,44 @@ body {
   color: #111827;
 }
 
+.rautahat-cp__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.rautahat-cp__head-text {
+  min-width: 0;
+}
+
+.rautahat-cp__head .rautahat-cp__subtitle {
+  margin-bottom: 0;
+}
+
+.rautahat-cp__know-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #0d9488;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rautahat-cp__know-link:hover {
+  background: #0f766e;
+  color: #fff;
+}
+
 .rautahat-cp__subtitle {
   margin: 0 0 20px 0;
   font-size: 14px;
@@ -1937,4 +1975,247 @@ body {
   .compare-table-wrap {
     padding: 0 12px 16px;
   }
+}
+
+/* Madhesh Pradesh — broad ethnic groups accordion (light theme, matches province dashboard) */
+.madhesh-broad-acc {
+  flex: 0 0 auto;
+  background: #f3f4f6;
+  border-top: 1px solid #d1d5db;
+  padding: clamp(18px, 3vw, 28px) clamp(14px, 3vw, 24px) clamp(22px, 4vw, 36px);
+  color: #111827;
+}
+
+.madhesh-broad-acc__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.madhesh-broad-acc__title {
+  margin: 0 0 8px 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.madhesh-broad-acc__intro {
+  margin: 0 0 18px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.madhesh-broad-acc__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.madhesh-broad-acc__block {
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.madhesh-broad-acc__block--open {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.madhesh-broad-acc__trigger,
+.madhesh-broad-acc__static {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+.madhesh-broad-acc__trigger {
+  cursor: pointer;
+}
+
+.madhesh-broad-acc__trigger:hover {
+  background: #f9fafb;
+}
+
+.madhesh-broad-acc__trigger-left,
+.madhesh-broad-acc__static .madhesh-broad-acc__trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.madhesh-broad-acc__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+}
+
+.madhesh-broad-acc__label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.madhesh-broad-acc__trigger-right,
+.madhesh-broad-acc__static .madhesh-broad-acc__trigger-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.madhesh-broad-acc__nums {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.madhesh-broad-acc__sep {
+  color: #9ca3af;
+  margin: 0 2px;
+}
+
+.madhesh-broad-acc__pct {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.madhesh-broad-acc__chevron {
+  display: inline-block;
+  font-size: 10px;
+  color: #6b7280;
+  transition: transform 0.2s ease;
+}
+
+.madhesh-broad-acc__chevron--open {
+  transform: rotate(-180deg);
+}
+
+.madhesh-broad-acc__chevron-spacer {
+  width: 14px;
+  display: inline-block;
+}
+
+.madhesh-broad-acc__nested {
+  padding: 0 16px 14px 16px;
+  border-top: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+
+.madhesh-broad-acc__nested--flat {
+  padding-top: 12px;
+}
+
+.madhesh-broad-acc__nested-hint {
+  margin: 12px 0 10px 0;
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.madhesh-broad-acc__sub {
+  margin-bottom: 8px;
+}
+
+.madhesh-broad-acc__sub:last-child {
+  margin-bottom: 0;
+}
+
+.madhesh-broad-acc__sub-trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.madhesh-broad-acc__sub-trigger:hover {
+  background: #f3f4f6;
+}
+
+.madhesh-broad-acc__sub-detail {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.madhesh-broad-acc__sub-body {
+  padding: 10px 0 4px 0;
+}
+
+.madhesh-broad-acc__placeholder {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.45;
+}
+
+.madhesh-broad-acc__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.madhesh-broad-acc__table th,
+.madhesh-broad-acc__table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.madhesh-broad-acc__table th {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.madhesh-broad-acc__table td:last-child,
+.madhesh-broad-acc__table th:last-child {
+  text-align: right;
+}
+
+.madhesh-broad-acc__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.madhesh-broad-acc__total-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.madhesh-broad-acc__total-nums {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: #374151;
 }

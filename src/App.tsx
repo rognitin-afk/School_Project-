@@ -15,6 +15,7 @@ import { SarlahiDistrictPanel } from './components/SarlahiDistrictPanel'
 import { DistrictCasteEthnicityPanel } from './components/DistrictCasteEthnicityPanel'
 import { NepalNationalDemographicsPanel } from './components/NepalNationalDemographicsPanel'
 import { ProvinceContextDemographicsPanel } from './components/ProvinceContextDemographicsPanel'
+import { MadheshBroadEthnicAccordion } from './components/MadheshBroadEthnicAccordion'
 import { fetchGeoJson } from './api/geojson'
 import { buildHierarchy } from './utils/hierarchy'
 import { MAP_PINS } from './data/mapPins'
@@ -136,7 +137,15 @@ function App() {
         <Sidebar selectedSchool={selectedSchool || null} district={districtFilter || undefined} />
       </div>
       {showKoshiStats && <KoshiProvincePanel />}
-      {showMadheshStats && <MadheshProvincePanel />}
+      {provinceFilter === '2' && (
+        <>
+          {showMadheshStats && <MadheshProvincePanel />}
+          <MadheshBroadEthnicAccordion />
+          {!districtFilter.trim() && hierarchy && (
+            <DistrictCasteEthnicityPanel scope="province" provinceCode="2" hierarchy={hierarchy} />
+          )}
+        </>
+      )}
       {showBagmatiStats && <BagmatiProvincePanel />}
       {showGandakiStats && <GandakiProvincePanel />}
       {showLumbiniStats && <LumbiniProvincePanel />}
@@ -152,11 +161,13 @@ function App() {
       {districtFilter.trim() !== '' ? (
         <DistrictCasteEthnicityPanel scope="district" mapDistrictLabel={districtFilter} />
       ) : provinceFilter ? (
-        <DistrictCasteEthnicityPanel
-          scope="province"
-          provinceCode={provinceFilter}
-          hierarchy={hierarchy}
-        />
+        provinceFilter === '2' ? null : (
+          <DistrictCasteEthnicityPanel
+            scope="province"
+            provinceCode={provinceFilter}
+            hierarchy={hierarchy}
+          />
+        )
       ) : (
         <DistrictCasteEthnicityPanel scope="national" />
       )}

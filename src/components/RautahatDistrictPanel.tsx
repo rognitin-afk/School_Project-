@@ -14,6 +14,7 @@ import {
   rautahatPlaceOfBirth2021,
   rautahatPopulationByCensus,
 } from '../data/rautahatDistrictData'
+import { DISTRICT_KNOW_MORE_URL } from '../data/districtKnowMoreLinks'
 
 function DataTableWithPct({
   rows,
@@ -161,12 +162,24 @@ export function RautahatDistrictPanel() {
           <strong>{rautahatDistrictMeta.name}</strong>
         </nav>
 
-        <h2 id="rautahat-cp-title" className="rautahat-cp__h1">
-          {rautahatDistrictMeta.name.toUpperCase()}
-        </h2>
-        <p className="rautahat-cp__subtitle">
-          {rautahatDistrictMeta.status} · {rautahatDistrictMeta.nameNative}
-        </p>
+        <div className="rautahat-cp__head">
+          <div className="rautahat-cp__head-text">
+            <h2 id="rautahat-cp-title" className="rautahat-cp__h1">
+              {rautahatDistrictMeta.name.toUpperCase()}
+            </h2>
+            <p className="rautahat-cp__subtitle">
+              {rautahatDistrictMeta.status} · {rautahatDistrictMeta.nameNative}
+            </p>
+          </div>
+          <a
+            className="rautahat-cp__know-link"
+            href={DISTRICT_KNOW_MORE_URL.rautahat}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Know Rautahat
+          </a>
+        </div>
 
         <div className="rautahat-cp__hero">
           <div className="rautahat-cp__keystat">
