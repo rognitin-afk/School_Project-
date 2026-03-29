@@ -2121,6 +2121,89 @@ body {
   padding-top: 12px;
 }
 
+.madhesh-broad-acc__nested--dalits {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.madhesh-broad-acc__political {
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.madhesh-broad-acc__political-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #9f1239;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.madhesh-broad-acc__political-btn:hover {
+  background: #ffe4e6;
+  border-color: #fda4af;
+}
+
+.madhesh-broad-acc__political-body {
+  margin-top: 14px;
+  padding: 14px 14px 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.madhesh-broad-acc__political-lead {
+  margin: 0 0 14px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.madhesh-broad-acc__political-h {
+  margin: 16px 0 8px 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+}
+
+.madhesh-broad-acc__political-body > .madhesh-broad-acc__political-h:first-of-type {
+  margin-top: 0;
+}
+
+.madhesh-broad-acc__political-foot {
+  margin: 12px 0 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #9ca3af;
+}
+
+.madhesh-broad-acc__table--compact td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.madhesh-broad-acc__table--compact th:last-child {
+  text-align: right;
+}
+
+.madhesh-broad-acc__table-total td {
+  font-weight: 700;
+  border-bottom: none;
+  background: #f9fafb;
+}
+
 .madhesh-broad-acc__nested-hint {
   margin: 12px 0 10px 0;
   font-size: 12px;

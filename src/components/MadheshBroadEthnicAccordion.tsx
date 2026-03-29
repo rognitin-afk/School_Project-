@@ -6,6 +6,12 @@ import {
   type CasteRow,
   type MadheshBroadGroupRow,
 } from '../data/madheshBroadEthnicGroups'
+import {
+  madheshAdministrativeStructure,
+  madheshWardsByDistrict,
+  madhesiDalitPoliticalGap,
+  madhesiDalitRepresentation2022,
+} from '../data/madheshPoliticalStructure'
 
 const nf = new Intl.NumberFormat('en-IN')
 
@@ -49,7 +55,185 @@ function CasteTable({ rows }: { rows: CasteRow[] }) {
   )
 }
 
-function SubgroupPanel({ group }: { group: MadheshBroadGroupRow }) {
+function PoliticalDisadvantagePanel({
+  open,
+  onToggle,
+  panelId,
+}: {
+  open: boolean
+  onToggle: () => void
+  panelId: string
+}) {
+  const a = madheshAdministrativeStructure
+  const gap = madhesiDalitPoliticalGap
+
+  return (
+    <div className="madhesh-broad-acc__political">
+      <button
+        type="button"
+        className="madhesh-broad-acc__political-btn"
+        aria-expanded={open}
+        aria-controls={panelId}
+        id={`${panelId}-label`}
+        onClick={onToggle}
+      >
+        Political disadvantage
+        <span className={`madhesh-broad-acc__chevron${open ? ' madhesh-broad-acc__chevron--open' : ''}`} aria-hidden>
+          ▼
+        </span>
+      </button>
+      {open ? (
+        <div className="madhesh-broad-acc__political-body" id={panelId} role="region" aria-labelledby={`${panelId}-label`}>
+          <p className="madhesh-broad-acc__political-lead">
+            Across all <strong>{nf.format(a.totalLocalUnits)}</strong> local units (municipalities), Madhesi Dalits hold
+            only <strong>{madhesiDalitRepresentation2022[0]?.dalitHolds ?? 1}</strong> mayor/chair and{' '}
+            <strong>{madhesiDalitRepresentation2022[1]?.dalitHolds ?? 1}</strong> deputy mayor/vice chair—despite being a
+            large share of the province population.
+          </p>
+
+          <h4 className="madhesh-broad-acc__political-h">Madhesh — political structure</h4>
+          <table className="madhesh-broad-acc__table madhesh-broad-acc__table--compact">
+            <tbody>
+              <tr>
+                <td>Total districts</td>
+                <td>{a.totalDistricts}</td>
+              </tr>
+              <tr>
+                <td>Total local units</td>
+                <td>{nf.format(a.totalLocalUnits)}</td>
+              </tr>
+              <tr>
+                <td>Total wards</td>
+                <td>{nf.format(a.totalWards)}</td>
+              </tr>
+              <tr>
+                <td>Metropolitan city</td>
+                <td>{a.metropolitanCity}</td>
+              </tr>
+              <tr>
+                <td>Sub-metropolitan cities</td>
+                <td>{a.subMetropolitanCities}</td>
+              </tr>
+              <tr>
+                <td>Municipalities</td>
+                <td>{a.municipalities}</td>
+              </tr>
+              <tr>
+                <td>Rural municipalities</td>
+                <td>{a.ruralMunicipalities}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 className="madhesh-broad-acc__political-h">Wards by district</h4>
+          <table className="madhesh-broad-acc__table madhesh-broad-acc__table--compact">
+            <thead>
+              <tr>
+                <th>District</th>
+                <th>Wards</th>
+              </tr>
+            </thead>
+            <tbody>
+              {madheshWardsByDistrict.map((d) => (
+                <tr key={d.district}>
+                  <td>{d.district}</td>
+                  <td>{nf.format(d.wards)}</td>
+                </tr>
+              ))}
+              <tr className="madhesh-broad-acc__table-total">
+                <td>Total</td>
+                <td>{nf.format(a.totalWards)}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 className="madhesh-broad-acc__political-h">Madhesi Dalit representation (2022 local elections)</h4>
+          <table className="madhesh-broad-acc__table madhesh-broad-acc__table--compact">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Total seats</th>
+                <th>Dalit holds</th>
+                <th>%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {madhesiDalitRepresentation2022.map((r) => (
+                <tr key={r.position}>
+                  <td>{r.position}</td>
+                  <td>{nf.format(r.totalSeats)}</td>
+                  <td>{nf.format(r.dalitHolds)}</td>
+                  <td>{r.pctRepresentation.toFixed(2)}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <h4 className="madhesh-broad-acc__political-h">Population share vs. seats (the gap)</h4>
+          <table className="madhesh-broad-acc__table madhesh-broad-acc__table--compact">
+            <tbody>
+              <tr>
+                <td>Madhesi Dalit population (Madhesh)</td>
+                <td>{nf.format(gap.madhesiDalitPopulation)}</td>
+              </tr>
+              <tr>
+                <td>Share of Madhesh population</td>
+                <td>{gap.pctOfMadheshPopulation.toFixed(2)}%</td>
+              </tr>
+              <tr>
+                <td>Mayors (proportional expectation)</td>
+                <td>{gap.mayorsProportionalNote}</td>
+              </tr>
+              <tr>
+                <td>Mayors (actual Dalit holds)</td>
+                <td>{gap.mayorsActual}</td>
+              </tr>
+              <tr>
+                <td>Missing mayors (vs proportional)</td>
+                <td>{gap.missingMayors}</td>
+              </tr>
+              <tr>
+                <td>Ward chairs (proportional expectation)</td>
+                <td>{gap.wardChairsProportionalNote}</td>
+              </tr>
+              <tr>
+                <td>Ward chairs (actual Dalit holds)</td>
+                <td>{gap.wardChairsActual}</td>
+              </tr>
+              <tr>
+                <td>Missing ward chairs (vs proportional)</td>
+                <td>{gap.missingWardChairs}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="madhesh-broad-acc__political-foot">
+            Administrative counts: province structure. Representation and gap: 2022 local election context; proportional
+            expectations are illustrative (population share).
+          </p>
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
+function DalitsExpandedBody({ group }: { group: MadheshBroadGroupRow }) {
+  const baseId = useId()
+  const panelId = `${baseId}-political`
+  const [politicalOpen, setPoliticalOpen] = useState(false)
+
+  return (
+    <div className="madhesh-broad-acc__nested madhesh-broad-acc__nested--dalits">
+      <PoliticalDisadvantagePanel
+        open={politicalOpen}
+        onToggle={() => setPoliticalOpen((v) => !v)}
+        panelId={panelId}
+      />
+      <SubgroupPanel group={group} embed />
+    </div>
+  )
+}
+
+function SubgroupPanel({ group, embed }: { group: MadheshBroadGroupRow; embed?: boolean }) {
   const [openSub, setOpenSub] = useState<string | null>(null)
   const toggle = useCallback((id: string) => {
     setOpenSub((prev) => (prev === id ? null : id))
@@ -57,8 +241,8 @@ function SubgroupPanel({ group }: { group: MadheshBroadGroupRow }) {
 
   if (!group.subgroups?.length) return null
 
-  return (
-    <div className="madhesh-broad-acc__nested">
+  const inner = (
+    <>
       {group.nestedHint ? <p className="madhesh-broad-acc__nested-hint">{group.nestedHint}</p> : null}
       {group.subgroups.map((sub) => (
         <div key={sub.id} className="madhesh-broad-acc__sub">
@@ -84,8 +268,12 @@ function SubgroupPanel({ group }: { group: MadheshBroadGroupRow }) {
           ) : null}
         </div>
       ))}
-    </div>
+    </>
   )
+
+  if (embed) return inner
+
+  return <div className="madhesh-broad-acc__nested">{inner}</div>
 }
 
 function ExpandedBody({ row }: { row: MadheshBroadGroupRow }) {
@@ -97,6 +285,9 @@ function ExpandedBody({ row }: { row: MadheshBroadGroupRow }) {
     )
   }
   if (row.subgroups?.length) {
+    if (row.id === 'dalits') {
+      return <DalitsExpandedBody group={row} />
+    }
     return <SubgroupPanel group={row} />
   }
   return null
